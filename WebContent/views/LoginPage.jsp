@@ -19,6 +19,7 @@
 
   </head>
   <body>
+  
 	  <div id="login-page">
 	  	<div class="container">	  	
 		    <form:form method="POST" action="validateUser" id="login-form" class="form-login" commandName="logincommand">
@@ -83,4 +84,20 @@
  -->
 
   </body>
+  <script>
+			$(document).ready(function() {
+				var url	=	jQuery(location).attr('href');
+				var status = url.split("?status=")[1];
+				if(status!=undefined)
+				{
+					if(status=='false')
+					{
+						alert('Invalid User !!!');
+					}
+				}
+				
+			});
+
+</script>
 </html>
+

@@ -34,8 +34,8 @@ public class LoginController {
 	    modelandview = new ModelAndView("home");
 	    System.out.println("Controller :LoginController Method :showLogin");
 	    boolean status = loginService.isValidUser(emp, request);
+	    if(!status) modelandview = new ModelAndView("redirect:login", "status",status);
 	    
-	   // modelandview = new ModelAndView("redirect:login", "status", Boolean.valueOf(status));
 	    return modelandview;
 	  }
 

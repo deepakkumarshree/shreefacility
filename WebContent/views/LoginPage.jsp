@@ -21,7 +21,7 @@
   <body>
 	  <div id="login-page">
 	  	<div class="container">	  	
-		    <form:form method="GET" action="validateUser" id="login-form" class="form-login" commandName="logincommand">
+		    <form:form method="POST" action="validateUser" id="login-form" class="form-login" commandName="logincommand">
 		        <div><img alt="" src="resources/image/sipl_logo.png"></div>
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">

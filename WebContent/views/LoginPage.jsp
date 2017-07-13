@@ -18,19 +18,12 @@
         
     <!-- Custom styles for this template -->
     <link href="resources/assets/css/style.css" rel="stylesheet">
-    <link  href="resources/css/style-responsive.css" rel="stylesheet">
+    <link  href="resources/assets/css/style-responsive.css" rel="stylesheet">
 
   </head>
-
   <body>
-
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-
 	  <div id="login-page">
-	  	<div class="container">
-	  	
+	  	<div class="container">	  	
 		      <form class="form-login" action="index.html">
 		        <div><img alt="" src="resources/image/sipl_logo.png"></div>
 		        <h2 class="form-login-heading">sign in now</h2>
@@ -52,9 +45,7 @@
 		                    Create an account
 		                </a>
 		            </div> -->
-		
-		        </div>
-		
+		        </div>		
 		          <!-- Modal -->
 		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
 		              <div class="modal-dialog">

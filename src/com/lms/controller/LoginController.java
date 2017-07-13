@@ -22,7 +22,7 @@ public class LoginController {
 	  {
 	    ModelAndView modelandview = null;
 	    modelandview = new ModelAndView("login", "logincommand", new Employee());
-	    System.out.println("Controller :LoginController Method :showLogin");
+	    System.out.println("Controller :LoginController Method :login");
 	    return modelandview;
 	  }
 	@RequestMapping({"/validateUser"})
@@ -30,7 +30,7 @@ public class LoginController {
 	    throws Exception
 	  {
 	    ModelAndView modelandview = null;
-	    modelandview = new ModelAndView("Logintiles");
+	    modelandview = new ModelAndView("home");
 	    System.out.println("Controller :LoginController Method :showLogin");
 	    boolean status = loginService.isValidUser(emp, request);
 	    

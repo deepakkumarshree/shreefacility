@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.lms.dao.LoginDao;
 import com.lms.model.Employee;
-import com.lms.model.EmployeeDetails;
+
 
 @Repository
 public class LoginDaoImp implements LoginDao{
@@ -24,7 +24,7 @@ public class LoginDaoImp implements LoginDao{
 	    int userId = 0;
 	    try
 	    {
-	      Criteria userCriteria = this.sessionFactory
+	      /*Criteria userCriteria = this.sessionFactory
 	        .getCurrentSession()
 	        .createCriteria(Employee.class)
 	        .add(Restrictions.disjunction()
@@ -56,7 +56,7 @@ public class LoginDaoImp implements LoginDao{
 	      System.out.println(userId);
 	      if (userId > 0) {
 	        return true;
-	      }
+	      }*/
 	    }
 	    catch (Exception e)
 	    {

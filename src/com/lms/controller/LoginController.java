@@ -1,7 +1,5 @@
 package com.lms.controller;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +16,15 @@ import com.lms.service.LoginService;
 public class LoginController {
 	@Autowired
 	private LoginService loginService;
+	
+	 @RequestMapping({"login"})
+	  public ModelAndView login() throws Exception
+	  {
+	    ModelAndView modelandview = null;
+	    modelandview = new ModelAndView("login", "logincommand", new Employee());
+	    System.out.println("Controller :LoginController Method :showLogin");
+	    return modelandview;
+	  }
 	@RequestMapping({"/validateUser"})
 	  public ModelAndView validateUser(HttpServletRequest request, @ModelAttribute("logincommand") Employee emp)
 	    throws Exception

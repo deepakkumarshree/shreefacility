@@ -1,23 +1,21 @@
 package com.lms.daoImp;
 
-import java.io.PrintStream;
-import javax.servlet.ServletContext;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
-import org.hibernate.classic.Session;
-import org.hibernate.criterion.Disjunction;
-import org.hibernate.criterion.Junction;
+
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.lms.dao.LoginDao;
 import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
 
 @Repository
-public class LoginDaoImp {
+public class LoginDaoImp implements LoginDao{
 	@Autowired
 	  private SessionFactory sessionFactory;
 	  

@@ -1,3 +1,5 @@
+<!--Created By Deepak Kumar -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,6 +32,7 @@
 	  	<div class="container">
 	  	
 		      <form class="form-login" action="index.html">
+		        <div><img alt="" src="resources/image/sipl_logo.png"></div>
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" placeholder="User ID" autofocus>

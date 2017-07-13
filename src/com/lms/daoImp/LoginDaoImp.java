@@ -24,31 +24,15 @@ public class LoginDaoImp implements LoginDao{
 	    int userId = 0;
 	    try
 	    {
-	      /*Criteria userCriteria = this.sessionFactory
-	        .getCurrentSession()
-	        .createCriteria(Employee.class)
-	        .add(Restrictions.disjunction()
-	        .add(Restrictions.eq("loginname", 
-	        userBean.getLoginName()))
-	        .add(Restrictions.eq("password", 
-	        userBean.getPassword()))
-	        .add(Restrictions.eq("active", Boolean.valueOf(true))));
+	      Criteria userCriteria = this.sessionFactory.getCurrentSession()
+	        .createCriteria(Employee.class).add(Restrictions.disjunction()
+	        .add(Restrictions.eq("loginName",userBean.getLoginName()))
+	        .add(Restrictions.eq("password",userBean.getPassword())));
+	        //.add(Restrictions.eq("active", Boolean.valueOf(true))));
 	      
 	      Employee u = (Employee)userCriteria.uniqueResult();
-	      
-	      Criteria userDetailsCriteria = this.sessionFactory
-	        .getCurrentSession()
-	        .createCriteria(EmployeeDetails.class)
-	        .add(Restrictions.disjunction().add(
-	        Restrictions.eq("userid", Integer.valueOf(u.getId()))));
-	      EmployeeDetails ud = (EmployeeDetails)userDetailsCriteria.uniqueResult();
-	      
-	      String name = ud.getFirstname() + " " + ud.getLastname();
-	      String filepath = request.getSession().getServletContext()
-	        .getRealPath("/");
-	      
+	      String name = u.getFirstname() + " " + u.getLastname();     
 	      userId = u.getId();
-	      
 	      HttpSession session = request.getSession();
 	      session.setAttribute("userid", Integer.valueOf(userId));
 	      session.setAttribute("username", name);
@@ -56,7 +40,7 @@ public class LoginDaoImp implements LoginDao{
 	      System.out.println(userId);
 	      if (userId > 0) {
 	        return true;
-	      }*/
+	      }
 	    }
 	    catch (Exception e)
 	    {

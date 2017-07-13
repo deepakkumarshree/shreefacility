@@ -19,6 +19,8 @@
 			
 			<definition name="login" template="/views/LoginPage.jsp">
 			</definition>
+			<definition name="home" template="/views/HomePage.jsp">
+			</definition>
 			
 			
 	      </tiles-definitions>

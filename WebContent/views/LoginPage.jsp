@@ -3,11 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+   
 
     <title>Shreepartners Infosoft Leave Managements</title>
 
@@ -24,20 +21,20 @@
   <body>
 	  <div id="login-page">
 	  	<div class="container">	  	
-		      <form class="form-login" action="index.html">
+		    <form:form method="GET" action="validateUser" id="login-form" class="form-login" commandName="logincommand">
 		        <div><img alt="" src="resources/image/sipl_logo.png"></div>
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="User ID" autofocus>
+		          <form:input path="loginName" id="loginName" autofocus="true" tabindex="1" cssClass="form-control"  placeholder="User ID"  />
 		            <br>
-		            <input type="password" class="form-control" placeholder="Password">
+		            <form:password path="password" id="password" tabindex="2" cssClass="form-control" placeholder="Password" value="" />
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
 		
 		                </span>
 		            </label>
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+		            <button class="btn btn-theme btn-block"  tabindex="3" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
 		            <hr>		        
 		            <!-- <div class="registration">
 		                Don't have an account yet?<br/>
@@ -68,7 +65,7 @@
 		          </div>
 		          <!-- modal -->
 		
-		      </form>	  	
+		      </form:form>
 	  	
 	  	</div>
 	  </div>

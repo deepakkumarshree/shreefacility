@@ -23,10 +23,10 @@
      
       <header class="header black-bg">
               <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+                
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Shree Partners LMS</b></a>
+            <a href="http://www.shreepartners.com" class="logo" target="_blank"><img alt="" src="resources/image/sipl_logo.png"></a>
             <!--logo end-->
 
             <div class="top-menu">
@@ -131,7 +131,7 @@
 					<div class="row mt">
                       <!--CUSTOM CHART START -->
                       <div class="border-head">
-                          <h3>DashBorad</h3>
+                          <h3>DashBoard</h3>
                       </div>
                       <div class="custom-bar-chart">
                           <ul class="y-axis">

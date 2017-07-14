@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
-
 import com.lms.model.Employee;
 import com.lms.service.LoginService;
 
@@ -17,6 +16,7 @@ import com.lms.service.LoginService;
 public class LoginController {
 	@Autowired
 	private LoginService loginService;
+
 	
 	 @RequestMapping("login")
 	  public ModelAndView login() throws Exception
@@ -26,7 +26,7 @@ public class LoginController {
 	    System.out.println("Controller :LoginController Method :login");
 	    return modelandview;
 	  }
-	@RequestMapping(value="/validateUser" ,method = RequestMethod.POST)
+	 @RequestMapping(value="/validateUser" ,method = RequestMethod.POST)
 	  public ModelAndView validateUser(HttpServletRequest request, @ModelAttribute("logincommand") Employee emp)
 	    throws Exception
 	  {
@@ -38,5 +38,17 @@ public class LoginController {
 	    
 	    return modelandview;
 	  }
+	 @RequestMapping("/dashboard")
+	  public ModelAndView dashboard()
+	    throws Exception
+	  {
+	    ModelAndView modelandview = null;
+	    modelandview = new ModelAndView("home");
+	    System.out.println("Controller :LoginController Method :home");
+	 
+	    
+	    return modelandview;
+	  }
+
 
 }

@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lms.dao.LeaveTypeDao;
 import com.lms.model.LeaveType;
@@ -26,16 +27,21 @@ public class LeaveTypeDaoImpl implements LeaveTypeDao{
 		}
 		return null;
 	}
+	@Transactional
 	public boolean save(LeaveType leaveType) {
+		boolean status=false;
 		try{
-			sessionFactory.getCurrentSession().save(leaveType);
-			return true; 
+		
+			sessionFactory.getCurrentSession().saveOrUpdate(leaveType);
+			System.out.println("Inserted Leave Id ::"+leaveType.getLeaveId());
+			if(leaveType.getLeaveId()>0)
+				status= true; 
 			    
 		}catch(Exception e){
 			e.printStackTrace();
-			return false;
+			
 		}
-		//return false;
+		return status;
 	}
 
 	

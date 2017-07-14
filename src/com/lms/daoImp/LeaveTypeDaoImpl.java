@@ -15,13 +15,11 @@ import com.lms.model.LeaveType;
 public class LeaveTypeDaoImpl implements LeaveTypeDao{
 	@Autowired
 	  private SessionFactory sessionFactory;
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<LeaveType> getAll() {
 		try{
-			return sessionFactory
-			        .getCurrentSession()
-			        .createCriteria(LeaveType.class)
-			        .list();
+			return sessionFactory.getCurrentSession().createCriteria(LeaveType.class).list();
 		}catch(Exception e){
 			e.printStackTrace();
 		}

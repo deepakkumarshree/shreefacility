@@ -38,7 +38,7 @@
       
       <div class="row">	<div class="col-lg-10" style="padding-top: 100px"></div></div>
 	<div class="container-fluid">
-		<h4 class="widgettitle">Leave Type</h4>
+		<h4 class="widgettitle">Create Employee</h4>
 		
 		<div class="col-lg-12 hide" id="infobardiv">
 			<div class="alert alert-info" id="infobar">
@@ -52,15 +52,82 @@
 			</div>
 		</div>
 
-		<form:form role="form" id="leavetype-form" name="leavetype-form" method="POST" action="saveLeaveType" commandName="leavetypebean">
+		<form:form role="form" id="leavetype-form" name="leavetype-form" method="POST" action="saveEmployee" commandName="empBean">
 
 			<div class="row">
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">First Name</label>
+							<form:input id="firstname" path="firstname" tabindex="1"
+							cssClass="form-control" placeholder="First Name"
+							 maxlength="30"/>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Middle Name</label>
+							<form:input id="middlename" path="middlename" tabindex="1"
+							cssClass="form-control" placeholder="Middle Name"
+							 maxlength="30"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Last Name</label>
+							<form:input id="lastname" path="lastname" tabindex="1"
+							cssClass="form-control" placeholder="Last Name"
+							 maxlength="30"/>
+					</div>
+				</div>
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="required">Leave Name</label>
-							<form:input id="leaveName" path="leaveName" tabindex="1"
-							cssClass="form-control" placeholder="Leave Name"
+						<label class="required">Mail Id</label>
+							<form:input id="mailId" path="mailId" tabindex="1"
+							cssClass="form-control" placeholder="Mail Id"
+							 maxlength="30"/>
+					</div>
+				</div>
+			</div>
+				<div class="row">
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">dob</label>
+							<form:input id="dob" path="dob" tabindex="1"
+							cssClass="form-control" placeholder="Alternate Mail Id"
+							 maxlength="30"/>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Middle Name</label>
+							<form:input id="middlename" path="middlename" tabindex="1"
+							cssClass="form-control" placeholder="Middle Name"
+							 maxlength="30"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Last Name</label>
+							<form:input id="lastname" path="lastname" tabindex="1"
+							cssClass="form-control" placeholder="Last Name"
+							 maxlength="30"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Mail Id</label>
+							<form:input id="mailId" path="mailId" tabindex="1"
+							cssClass="form-control" placeholder="Mail Id"
 							 maxlength="30"/>
 					</div>
 				</div>

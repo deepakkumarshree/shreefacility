@@ -67,7 +67,7 @@
                           <li><a  href="panels.html">Create Leave</a></li>
                           <li><a  href="panels.html">Register Employee</a></li>
                           <li><a  href="panels.html">View All Employees</a></li>
-                          <li><a  href="panels.html">View/Edit Employee</a></li>
+                          <li><a  href="showEmployee">View/Edit Employee</a></li>
                           <li><a  href="showLeaveType">Add/View Leave Type</a></li>
                       </ul>
                   </li>

@@ -23,6 +23,9 @@
 			</definition>
 			<definition name="leavetype" template="/views/master/LeaveType.jsp">
 			</definition>
+			<definition name="addemp" template="/views/master/CreateEmployee.jsp">
+			</definition>
+			
 			
 			
 	      </tiles-definitions>

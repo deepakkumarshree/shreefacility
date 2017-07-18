@@ -18,29 +18,12 @@ import com.lms.service.LeaveTypeService;
 
 @Controller
 public class MasterController {
-	@Autowired
-	private LeaveTypeService leaveTypeService;
-	@Autowired
-	private EmployeeService employeeService;
 	
-
+	@Autowired
+	private EmployeeService employeeService;	
 	
-	@RequestMapping("/showLeaveType")
-	public ModelAndView showLeaveType() throws Exception{
-		ModelAndView modelAndView = null;
-		modelAndView = new ModelAndView("leavetype","leavetypebean",new LeaveType());
-		
-		System.out.println("Controller :MasterController Method :showLeaveType");
-		return modelAndView;
-		}
-	@RequestMapping(value="/saveLeaveType",method = RequestMethod.POST)
-	public ModelAndView saveLeaveType(HttpServletRequest request,@ModelAttribute("leavetypebean") LeaveType leaveType)throws Exception{
-		System.out.println("Controller : MasterController Method :saveLeaveType");	
-		boolean status = leaveTypeService.save(leaveType, request);
-		return new ModelAndView("redirect:showLeaveType", "status",status);
-		
-	}
-	@RequestMapping("/showEmployee")
+	
+	@RequestMapping("/addEmployee")
 	public ModelAndView addEmployee()throws Exception{
 	 
 		System.out.println("Controller :MasterController Method :addEmployee");

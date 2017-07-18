@@ -11,6 +11,13 @@
 	<link rel="stylesheet" href="resources/assets/bootstrap/css/jquery.datetimepicker.css">	
 	<link rel="stylesheet" href="resources/assets/bootstrap/css/jqwidgets/jqx.base.css" type="text/css" />
   	<link rel="stylesheet" href="resources/assets/plugins/datatables/dataTables.bootstrap.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
   	
 
     <!--external css-->
@@ -51,7 +58,7 @@
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 			</div>
 		</div>
-
+		
 		<form:form role="form" id="leavetype-form" name="leavetype-form" method="POST" action="saveLeaveType" commandName="leavetypebean">
 
 			<div class="row">
@@ -59,9 +66,20 @@
 
 					<div class="form-group">
 						<label class="required">Leave Name</label>
-							<form:input id="leaveName" path="leaveName" tabindex="1"
+							<form:input id="leavetype" path="leaveType" tabindex="1"
 							cssClass="form-control" placeholder="Leave Name"
 							 maxlength="30"/>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+					<div class="form-group">
+						<label class="required">From Date</label>
+							<form:input id="datepicker9" path="fromDate" tabindex="1"
+							cssClass="form-control" placeholder="mm-dd-yyyy" 
+							 />
 					</div>
 				</div>
 			</div>
@@ -105,4 +123,43 @@
 			});
 
 </script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript"> 
+
+
+  var disableddates = ["20-07-2017", "12-11-2017", "12-25-2014", "12-20-2014"];
+  
+  function disableSpecificDates(date) {
+      var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+      if (disableddates.indexOf(string) == -1)
+    	  {
+    	  return [true];
+    	  }
+      return [false];
+    }  
+
+  function setCustomDate(date) {	   
+	    var arr2 = disableSpecificDates(date);
+	    var arr3 = $.datepicker.noWeekends(date);
+
+	    return [(!arr2[0] || !arr3[0]) ? false : true];
+	}
+  
+  
+  $( function() {
+	  $( "#datepicker9" ).datepicker({
+		  changeYear:true,
+		  beforeShowDay: $.datepicker.noWeekends,
+		  beforeShowDay:setCustomDate,
+		  changeMonth:true,
+		  dateFormat: "dd-mm-yy"
+		});
+	  
+  } );
+
+  
+  </script>
+  
 </html>

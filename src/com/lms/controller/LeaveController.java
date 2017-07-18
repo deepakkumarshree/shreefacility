@@ -1,5 +1,7 @@
 package com.lms.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,8 @@ public class LeaveController {
 	public ModelAndView showLeaveType() throws Exception{
 		ModelAndView modelAndView = null;
 		modelAndView = new ModelAndView("leavetype","leavetypebean",new LeaveType());
-		
+		ArrayList<String> hList=leaveTypeService.getHolyday();
+		modelAndView.addObject("hlist",hList);
 		System.out.println("Controller :MasterController Method :showLeaveType");
 		return modelAndView;
 		}

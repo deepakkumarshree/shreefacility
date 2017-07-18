@@ -1,8 +1,10 @@
 package com.lms.daoImp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,24 @@ public class LeaveTypeDaoImpl implements LeaveTypeDao{
 			
 		}
 		return status;
+	}
+	@Override
+	@Transactional
+	public ArrayList<String> getHolyday() {
+		ArrayList<String> holydayList=new ArrayList<String>();
+		try{
+		
+			String sql = "SELECT DATE_FORMAT(date,'%Y-%m-%d') FROM HOLYDAY";
+			
+			SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery(sql);
+			//query.addEntity(String.class);
+			holydayList = (ArrayList<String>)(query.list());
+			    
+		}catch(Exception e){
+			e.printStackTrace();
+			
+		}
+		return holydayList;
 	}
 
 	

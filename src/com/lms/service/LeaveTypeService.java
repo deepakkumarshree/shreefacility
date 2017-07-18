@@ -1,5 +1,6 @@
 package com.lms.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,5 +13,6 @@ public interface LeaveTypeService {
 	public boolean save(LeaveType leaveType,HttpServletRequest request);
 	public boolean update(LeaveType leaveType,HttpServletRequest request);
 	public boolean delete(LeaveType leaveType,HttpServletRequest request);
+	public ArrayList<String> getHolyday();
 
 }

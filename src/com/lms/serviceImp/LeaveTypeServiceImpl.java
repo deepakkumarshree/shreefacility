@@ -1,5 +1,6 @@
 package com.lms.serviceImp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,6 +41,10 @@ public class LeaveTypeServiceImpl implements LeaveTypeService{
 	public boolean delete(LeaveType leaveType, HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	@Override
+	public ArrayList<String> getHolyday() {			
+		return leaveTypeDao.getHolyday();
 	}
 
 

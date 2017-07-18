@@ -120,6 +120,7 @@
 					});
 				}
 				
+				 // var disableddates = ["20-07-2017", "12-11-2017", "12-25-2014", "12-20-2014"];
 			});
 
 </script>
@@ -127,12 +128,18 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript"> 
-
-
-  var disableddates = ["20-07-2017", "12-11-2017", "12-25-2014", "12-20-2014"];
-  
-  function disableSpecificDates(date) {
+ 
+  var disableddates ='${hlist}';
+  alert(disableddates); 
+  //var disableddates = ["20-07-2017", "12-11-2017", "12-25-2014", "12-20-2014"];
+ // alert(disableddates); 
+  disableddates=disableddates.substring(1,disableddates.length-1);
+  disableddates=disableddates.split(",");
+  function disableSpecificDates(date) { //alert(disableddates);
+	  
       var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+      alert(string + '   ' +disableddates);
+      alert(disableddates.indexOf(string));
       if (disableddates.indexOf(string) == -1)
     	  {
     	  return [true];

@@ -15,6 +15,7 @@ import com.lms.service.LeaveTypeService;
 @Controller
 public class LeaveController {
 	
+	
 	@Autowired
 	private LeaveTypeService leaveTypeService;
 		

@@ -17,10 +17,8 @@ public class LoginServiceImp implements LoginService{
 	  @Transactional
 	  public boolean isValidUser(Employee userBean, HttpServletRequest request)
 	  {
-		  	Employee user = new Employee();
-		    user.setPassword(userBean.getPassword());
-		    user.setLoginName(userBean.getLoginName());
-		    return loginDao.isValidUser(user, request);
+		  	
+		    return loginDao.isValidUser(userBean, request);
 	  }
 
 }

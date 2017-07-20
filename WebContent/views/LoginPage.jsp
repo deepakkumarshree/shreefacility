@@ -23,10 +23,10 @@
 	  <div id="login-page">
 	  	<div class="container">	  	
 		    <form:form method="POST" action="validateUser" id="login-form" class="form-login" commandName="logincommand">
-		        <div><img alt="" src="resources/image/sipl_logo.png"></div>
+		        <div><img alt="" src="resources/images/sipl_logo.png"></div>
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
-		          <form:input path="loginName" id="loginName" autofocus="true" tabindex="1" cssClass="form-control"  placeholder="User ID"  />
+		          <form:input path="empcode" id="empcode" autofocus="true" tabindex="1" cssClass="form-control"  placeholder="User ID"  />
 		            <br>
 		            <form:password path="password" id="password" tabindex="2" cssClass="form-control" placeholder="Password" value="" />
 		            <label class="checkbox">
@@ -64,26 +64,13 @@
 		                  </div>
 		              </div>
 		          </div>
-		          <!-- modal -->
-		
 		      </form:form>
 	  	
 	  	</div>
 	  </div>
-
-    <!-- js placed at the end of the document so the pages load faster -->
     <script src="resources/assets/js/jquery.js"></script>
     <script src="resources/assets/js/bootstrap.min.js"></script>
-
-    <!--BACKSTRETCH-->
-    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
-   <!--  <script type="text/javascript" src="resources/assets/js/jquery.backstretch.min.js"></script>
-    <script>
-        $.backstretch("resources/assets/img/login-bg.jpg", {speed: 500});
-    </script>
- -->
-
-  </body>
+	 </body>
   <script>
 			$(document).ready(function() {
 				var url	=	jQuery(location).attr('href');

@@ -26,14 +26,14 @@ public class LoginDaoImp implements LoginDao{
 	    {
 	      Criteria userCriteria = this.sessionFactory.getCurrentSession()
 	        .createCriteria(Employee.class)
-	        .add(Restrictions.eq("loginName",userBean.getLoginName()))
+	        .add(Restrictions.eq("empcode",userBean.getEmpcode()))
 	        .add(Restrictions.eq("password",userBean.getPassword()));
 	        //.add(Restrictions.eq("active", Boolean.valueOf(true))));
 	      
 	      Employee u = (Employee)userCriteria.uniqueResult();
 	      String name = ""; 
 	      if(u!=null){
-		      userId = u.getId();
+		      userId = u.getEmpid();
 		      HttpSession session = request.getSession();
 		      session.setAttribute("userid", Integer.valueOf(userId));
 		      name = u.getFirstname() + " " + u.getLastname(); 

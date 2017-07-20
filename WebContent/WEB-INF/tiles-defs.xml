@@ -28,9 +28,18 @@
 				<put-attribute name="body" value="/views/HomePage.jsp" />
 			</definition>
 			
+			<definition name="mytime" extends="baseLayout">
+				<put-attribute name="title" value="My Time" />
+				<put-attribute name="body" value="/views/MyTime.jsp" />
+			</definition>
+			
 			<definition name="leavetype" template="/views/master/LeaveType.jsp">
 			</definition>
-			<definition name="addemp" template="/views/master/CreateEmployee.jsp">
+			<!-- <definition name="addemp" template="/views/master/CreateEmployee.jsp">
+			</definition> -->
+			<definition name="addemp" extends="baseLayout">
+				<put-attribute name="title" value="Create Employee" />
+				<put-attribute name="body" value="/views/master/CreateEmployee.jsp" />
 			</definition>
 			
 			

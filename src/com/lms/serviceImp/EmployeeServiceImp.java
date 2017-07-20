@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lms.dao.EmployeeDao;
 import com.lms.dao.LeaveTypeDao;
 import com.lms.model.Employee;
+import com.lms.model.EmployeeDetails;
 import com.lms.service.EmployeeService;
 @Service
 public class EmployeeServiceImp implements EmployeeService {
@@ -31,19 +32,19 @@ public class EmployeeServiceImp implements EmployeeService {
 	}
 
 	@Override
-	public boolean save(Employee employee, HttpServletRequest request) {
+	public boolean save(EmployeeDetails employee, HttpServletRequest request) {
 		return employeeDao.save(employee);
 		
 	}
 
 	@Override
-	public boolean update(Employee employee, HttpServletRequest request) {
+	public boolean update(EmployeeDetails employee, HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean delete(Employee employee, HttpServletRequest request) {
+	public boolean delete(EmployeeDetails employee, HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		return false;
 	}

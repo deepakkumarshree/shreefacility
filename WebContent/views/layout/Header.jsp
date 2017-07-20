@@ -13,32 +13,11 @@
 				
 				</li>
             </ul>
+            	<div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <!-- <li><a class="logout" href="login.html">Logout</a></li> -->
-                    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						<span class="hidden-xs">Profile</span>
-						</a>
-					<ul class="dropdown-menu">
-						<li class="user-header">
-							<i class="fa fa-user" aria-hidden="true"></i>
-							<p>
-								Deepak Kumar - Sr Software 
-								<small>9431660197</small>
-								<small><a href="#" style="color: white;">Profile</a></small>
-							</p>
-						</li>
-						
-						<li class="user-footer">
-							<div class="pull-left">
-								<a href="changePassword.htm" class="btn btn-default btn-flat">Change Password</a>
-							</div>
-							<div class="pull-right">
-								<a href="logout.htm" class="btn btn-default btn-flat">Sign out</a>
-							</div>
-						</li>
-					</ul>
+                    <li><a class="logout" href="login.html">Logout</a></li>
             	</ul>
+            </div>
             </div>
         </header>
 

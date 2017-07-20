@@ -80,7 +80,7 @@
 	    	<div class="pull-right hidden-xs">
 	      		<b>Version</b> 1.1&nbsp;&nbsp;&nbsp;&nbsp;
 	    	</div>
-	    	<strong><label style="padding-left:200px"></label>Copyright &copy; 2016-2017 <a href="http://www.shreepartners.com/">Copyright © 2017 Shreepartners.com All rights reserved.</a></strong>  
+	    	<strong><label style="padding-left:300px"></label><a href="http://www.shreepartners.com/">Copyright © 2017 Shreepartners.com All rights reserved.</a></strong>  
 	  	</footer>
 	</div>
 </body>

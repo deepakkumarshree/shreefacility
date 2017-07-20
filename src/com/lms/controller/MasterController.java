@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lms.model.Employee;
+import com.lms.model.EmployeeDetails;
 import com.lms.model.LeaveType;
 import com.lms.service.EmployeeService;
 import com.lms.service.LeaveTypeService;
@@ -23,22 +24,28 @@ public class MasterController {
 	private EmployeeService employeeService;	
 	
 	
-	@RequestMapping("/addEmployee")
+	@RequestMapping("/showEmployee")
 	public ModelAndView addEmployee()throws Exception{
 	 
 		System.out.println("Controller :MasterController Method :addEmployee");
 	   ModelAndView modelAndView = null;
-	   modelAndView = new ModelAndView("addemp","empBean",new Employee());		
+	   modelAndView = new ModelAndView("addemp","empBean",new EmployeeDetails());		
 	   
 	   return modelAndView;
 	}
 	
 	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-	public ModelAndView saveEmployee(HttpServletRequest request,@ModelAttribute("empBean")Employee employee, BindingResult result)
+	public ModelAndView saveEmployee(HttpServletRequest request,@ModelAttribute("empBean")EmployeeDetails employee, BindingResult result)throws Exception
 	{
 	  
 		boolean status=employeeService.save(employee,request);
 		return new ModelAndView("redirect:showEmployee", "status",status);
 		
 	}
+	@RequestMapping("/myrecruitment")
+	public ModelAndView myrecruitment() throws Exception{
+		ModelAndView modelAndView = null;
+		modelAndView = new ModelAndView("myrecruitment","leavetypebean",new LeaveType());		
+		return modelAndView;
+		}
 }

@@ -2,212 +2,126 @@ package com.lms.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="employeedetails")
-
 public class EmployeeDetails implements Serializable{
-	@Id
-	  @GeneratedValue(strategy=GenerationType.AUTO)
-	  @Column(name="userdetailsid")
-	  private Integer userdetailsid;
-	  @Column(name="firstname")
-	  private String firstname;
-	  @Column(name="middlename")
-	  private String middlename;
-	  @Column(name="lastname")
-	  private String lastname;
-	  @Column(name="mailid")
-	  private String mailId;
-	  @Column(name="alternatemailid")
-	  private String alternatemailId;
-	  @Column(name="dateofcreation")
-	  private String dateofcreation;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	  @Id	 
+	  @Column(name="emailId")
+	  private String emailId;
+	  @OneToOne(fetch=FetchType.EAGER )
+	  @JoinColumn(name="empid")
+	  private Employee emp;	 
 	  @Column(name="dob")
 	  private String dob;
-	  @Column(name="sex")
-	  private String sex;
-	  @Column(name="address")
-	  private String address;
+	  @Column(name="pan")
+	  private String pan;
+	  @Column(name="paddress")
+	  private String paddress;
+	  @Column(name="caddress")
+	  private String caddress;
 	  @Column(name="phone")
 	  private String phone;
-	  @Column(name="mobile")
-	  private String mobile;
-	  @Column(name="deviceuid")
-	  private String deviceUid;
-	  @Column(name="annuanlincome")
-	  private String annuanlIncome;
-	  @Column(name="remark")
-	  private String remark;
-	  @OneToOne(fetch=FetchType.LAZY, cascade={javax.persistence.CascadeType.ALL})
-	  @JoinColumn(name="userid")
-	  private Employee employee;
-	  
-	  public Employee getEmployee() {
-		return employee;
+	 
+	  @Column(name="emconname")
+	  private String emconname;
+	  @Column(name="emconaddress")
+	  private String emconaddress; 
+	  @Column(name="emconphone")
+	  private String emconphone; 
+	  @Column(name="spousename")
+	  private String spousename; 
+	  @Column(name="fathername")
+	  private String fathername;	  
+		
+	public String getDob() {
+		return dob;
 	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
-
-	public Integer getUserdetailsid()
-	  {
-	    return this.userdetailsid;
-	  }
+	public String getPan() {
+		return pan;
+	}
+	public void setPan(String pan) {
+		this.pan = pan;
+	}
+	public String getPaddress() {
+		return paddress;
+	}
+	public void setPaddress(String paddress) {
+		this.paddress = paddress;
+	}
+	public String getCaddress() {
+		return caddress;
+	}
+	public void setCaddress(String caddress) {
+		this.caddress = caddress;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getEmconname() {
+		return emconname;
+	}
+	public void setEmconname(String emconname) {
+		this.emconname = emconname;
+	}
+	public String getEmconaddress() {
+		return emconaddress;
+	}
+	public void setEmconaddress(String emconaddress) {
+		this.emconaddress = emconaddress;
+	}
+	public String getEmconphone() {
+		return emconphone;
+	}
+	public void setEmconphone(String emconphone) {
+		this.emconphone = emconphone;
+	}
+	public String getSpousename() {
+		return spousename;
+	}
+	public void setSpousename(String spousename) {
+		this.spousename = spousename;
+	}
+	public String getFathername() {
+		return fathername;
+	}
+	public void setFathername(String fathername) {
+		this.fathername = fathername;
+	}
+	public Employee getEmp() {
+		return emp;
+	}
+	public void setEmp(Employee emp) {
+		this.emp = emp;
+	} 
 	  
-	  public void setUserdetailsid(Integer userdetailsid)
-	  {
-	    this.userdetailsid = userdetailsid;
-	  }
-	  
-	  public String getFirstname()
-	  {
-	    return this.firstname;
-	  }
-	  
-	  public void setFirstname(String firstname)
-	  {
-	    this.firstname = firstname;
-	  }
-	  
-	  public String getMiddlename()
-	  {
-	    return this.middlename;
-	  }
-	  
-	  public void setMiddlename(String middlename)
-	  {
-	    this.middlename = middlename;
-	  }
-	  
-	  public String getLastname()
-	  {
-	    return this.lastname;
-	  }
-	  
-	  public void setLastname(String lastname)
-	  {
-	    this.lastname = lastname;
-	  }
-	  
-	  public String getMailId()
-	  {
-	    return this.mailId;
-	  }
-	  
-	  public void setMailId(String mailId)
-	  {
-	    this.mailId = mailId;
-	  }
-	  
-	  public String getAlternatemailId()
-	  {
-	    return this.alternatemailId;
-	  }
-	  
-	  public void setAlternatemailId(String alternatemailId)
-	  {
-	    this.alternatemailId = alternatemailId;
-	  }
-	  
-	  public String getDateofcreation()
-	  {
-	    return this.dateofcreation;
-	  }
-	  
-	  public void setDateofcreation(String dateofcreation)
-	  {
-	    this.dateofcreation = dateofcreation;
-	  }
-	  
-	  public String getDob()
-	  {
-	    return this.dob;
-	  }
-	  
-	  public void setDob(String dob)
-	  {
-	    this.dob = dob;
-	  }
-	  
-	  public String getSex()
-	  {
-	    return this.sex;
-	  }
-	  
-	  public void setSex(String sex)
-	  {
-	    this.sex = sex;
-	  }
-	  
-	  public String getAddress()
-	  {
-	    return this.address;
-	  }
-	  
-	  public void setAddress(String address)
-	  {
-	    this.address = address;
-	  }
-	  
-	  public String getPhone()
-	  {
-	    return this.phone;
-	  }
-	  
-	  public void setPhone(String phone)
-	  {
-	    this.phone = phone;
-	  }
-	  
-	  public String getMobile()
-	  {
-	    return this.mobile;
-	  }
-	  
-	  public void setMobile(String mobile)
-	  {
-	    this.mobile = mobile;
-	  }
-	  
-	  public String getDeviceUid()
-	  {
-	    return this.deviceUid;
-	  }
-	  
-	  public void setDeviceUid(String deviceUid)
-	  {
-	    this.deviceUid = deviceUid;
-	  }
-	  
-	  public String getAnnuanlIncome()
-	  {
-	    return this.annuanlIncome;
-	  }
-	  
-	  public void setAnnuanlIncome(String annuanlIncome)
-	  {
-	    this.annuanlIncome = annuanlIncome;
-	  }
-	  
-	  public String getRemark()
-	  {
-	    return this.remark;
-	  }
-	  
-	  public void setRemark(String remark)
-	  {
-	    this.remark = remark;
-	  }
-
 }

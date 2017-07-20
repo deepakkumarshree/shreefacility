@@ -1,42 +1,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	 <link href="resources/assets/css/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-	<link rel="stylesheet" href="resources/assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="resources/assets/bootstrap/css/jquery-ui.css">
-	<link rel="stylesheet" href="resources/assets/bootstrap/css/jquery.datetimepicker.css">	
-	<link rel="stylesheet" href="resources/assets/bootstrap/css/jqwidgets/jqx.base.css" type="text/css" />
-  	<link rel="stylesheet" href="resources/assets/plugins/datatables/dataTables.bootstrap.css">
-  	
 
-    <!--external css-->
-<script src="resources/js/LeaveType.js"></script>
-<script src="resources/assets/js/jquery.js"></script>
-<script src="resources/assets/js/bootstrap.min.js"></script>
-
-</head>
 <body>
-  <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                
-              </div>
-            <!--logo start-->
-            <a href="http://www.shreepartners.com" class="logo" target="_blank"><img alt="" src="resources/image/sipl_logo.png"></a>
-            <!--logo end-->
-
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
-            	</ul>
-            </div>
-        </header>
-      <!--header end-->
+      <section id="container" >
+      <!--main content start-->
+      <section id="main-content">
+      <section class="wrapper">  
       
-      <div class="row">	<div class="col-lg-10" style="padding-top: 100px"></div></div>
+    <div class="row">	<div class="col-lg-10" style="padding-top: 100px"></div></div>
 	<div class="container-fluid">
 		<h4 class="widgettitle">Create Employee</h4>
 		
@@ -54,85 +26,214 @@
 
 		<form:form role="form" id="leavetype-form" name="leavetype-form" method="POST" action="saveEmployee" commandName="empBean">
 
-			<div class="row">
-				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
-					<div class="form-group">
-						<label class="required">First Name</label>
-							<form:input id="firstname" path="firstname" tabindex="1"
-							cssClass="form-control" placeholder="First Name"
-							 maxlength="30"/>
-					</div>
-				</div>
-				
-				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Middle Name</label>
-							<form:input id="middlename" path="middlename" tabindex="1"
-							cssClass="form-control" placeholder="Middle Name"
-							 maxlength="30"/>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Last Name</label>
-							<form:input id="lastname" path="lastname" tabindex="1"
-							cssClass="form-control" placeholder="Last Name"
-							 maxlength="30"/>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Mail Id</label>
-							<form:input id="mailId" path="mailId" tabindex="1"
-							cssClass="form-control" placeholder="Mail Id"
-							 maxlength="30"/>
-					</div>
-				</div>
-			</div>
 				<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="required">dob</label>
-							<form:input id="dob" path="dob" tabindex="1"
-							cssClass="form-control" placeholder="Alternate Mail Id"
-							 maxlength="30"/>
+						<label class="required">First Name</label>
+							<form:input id="emp.firstname" path="emp.firstname" tabindex="1"
+							cssClass="form-control" placeholder="First Name"
+							 maxlength="100"/>
 					</div>
 				</div>
 				
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="required">Middle Name</label>
-							<form:input id="middlename" path="middlename" tabindex="1"
+						<label class="optional">Middle Name</label>
+							<form:input id="emp.middlename" path="emp.middlename" tabindex="1"
 							cssClass="form-control" placeholder="Middle Name"
 							 maxlength="30"/>
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+					<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Last Name</label>
-							<form:input id="lastname" path="lastname" tabindex="1"
+							<form:input id="emp.lastname" path="emp.lastname" tabindex="1"
 							cssClass="form-control" placeholder="Last Name"
-							 maxlength="30"/>
+							 maxlength="100"/>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="required">Mail Id</label>
-							<form:input id="mailId" path="mailId" tabindex="1"
-							cssClass="form-control" placeholder="Mail Id"
+						<label class="required">Email Id</label>
+							<form:input id="emailId" path="emailId" tabindex="1"
+							cssClass="form-control" placeholder="Email Id"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Date of Join</label>
+							<form:input id="emp.doj" path="emp.doj" tabindex="1"
+							cssClass="form-control" placeholder="Date of Join"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Reporting To</label>
+							<form:input id="emp.repotingto" path="emp.repotingto" tabindex="1"
+							cssClass="form-control" placeholder="Reporting To"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Designation</label>
+							<form:input id="emp.designation" path="emp.designation" tabindex="1"
+							cssClass="form-control" placeholder="Designation"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Sex</label>
+							<form:select id="emp.sex" path="emp.sex" tabindex="1"
+							cssClass="form-control" 
+							 maxlength="30">
+							 <form:option value="Male">Male</form:option>
+							 <form:option value="Female">Female</form:option>
+							 </form:select>
+					</div>
+				</div>
+			
+				</div>
+				<div class="row">
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Phone</label>
+							<form:input id="phone" path="phone" tabindex="1" class="form-control"
+							cssClass="form-control" placeholder="phone"
 							 maxlength="30"/>
 					</div>
 				</div>
+								<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Date of Birth</label>
+							<form:input id="dob" path="dob" tabindex="1"
+							cssClass="form-control" placeholder="Date of Join"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Status</label>
+							<form:select id="emp.status" path="emp.status" tabindex="1"
+							cssClass="form-control"
+							 maxlength="100">
+							 <form:option value="Active">active</form:option>
+							  <form:option value="Inactive">inactive</form:option>
+							  </form:select>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="optional">Father Name</label>
+							<form:input id="fathername" path="fathername" tabindex="1"
+							cssClass="form-control" placeholder="Father Name"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="optional">Spouse Name</label>
+							<form:input id="spousename" path="spousename" tabindex="1"
+							cssClass="form-control" placeholder="Husband Name"
+							 maxlength="100"/>
+					</div>
+				</div>
+				
+				</div>
+				<div class="row">
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Permanent Address</label>
+							<form:input id="paddress" path="paddress" tabindex="1"
+							cssClass="form-control" placeholder="Permanent Address"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Current Address</label>
+							<form:input id="caddress" path="caddress" tabindex="1"
+							cssClass="form-control" placeholder="Current Address"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Pan No</label>
+							<form:input id="pan" path="pan" tabindex="1"
+							cssClass="form-control" placeholder="Pan No"
+							 maxlength="100"/>
+					</div>
+				</div>
 			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-4 col-sm-4 col-xs-12">		
+					<h4 class="widgettitle">Emergency Contact Detail</h4>
+				</div>
+			</div>
+			<div class="row">
+					<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">		
+							<div class="form-group">
+								<label class="required">EmConName</label>
+									<input type="text" id="emconname" name="emconname" tabindex="1"
+									cssClass="form-control" placeholder="EmConName"
+									 maxlength="30"/>
+							</div>
+						</div>	
+			</div>		
+			<div class="row">
+					<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">		
+							<div class="form-group">
+								<label class="required">EmRelation</label>
+									<input type="text" id="emrelation" name="emrelation" tabindex="1"
+									cssClass="form-control" placeholder="EmRelation"
+									 maxlength="100"/>
+							</div>
+						</div>	
+			</div>
+			<div class="row">
+					<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">		
+							<div class="form-group">
+								<label class="required">Emergency Contact Address</label>
+									<input type="text" id="emconaddress" name="emconaddress" tabindex="1"
+									cssClass="form-control" placeholder="emconaddress"
+									 maxlength="30"/>
+							</div>
+						</div>	
+			</div>	
+			<div class="row">
+					<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">		
+							<div class="form-group">
+								<label class="required">Emergency Phone</label>
+									<input type="text" id="emconphone" name="emconphone" class="form-control" tabindex="1"
+									cssClass="form-control" placeholder="emconphone"
+									 maxlength="100"/>
+							</div>
+						</div>	
+		
 			
+					
+			</div>
 			<div class="row">
 				<div class="col-lg-12">
 					<button type="submit" class="btn btn-default" tabindex="15">Save</button>
@@ -147,6 +248,7 @@
 		</form:form>
 
 	</div>
+	</section></section></section>
 </body>
   <script>
 			$(document).ready(function() {
@@ -168,7 +270,9 @@
 						$("#errorbardiv").removeClass("show").addClass("hide");
 					});
 				}
-				
+				$("input").focus(function() {
+					 $(this).attr('placeholder', '');
+				});
 			});
 
 </script>

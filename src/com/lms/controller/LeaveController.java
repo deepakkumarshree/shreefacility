@@ -38,5 +38,11 @@ public class LeaveController {
 		return new ModelAndView("redirect:showLeaveType", "status",status);
 		
 	}
+	@RequestMapping("/mytime")
+	public ModelAndView myTime() throws Exception{
+		ModelAndView modelAndView = null;
+		modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveType());		
+		return modelAndView;
+		}
 
 }

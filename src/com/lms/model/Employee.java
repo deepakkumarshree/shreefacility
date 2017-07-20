@@ -2,11 +2,15 @@ package com.lms.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -22,245 +26,110 @@ public class Employee implements Serializable  {
 
 	@Id
 	  @GeneratedValue(strategy=GenerationType.AUTO)
-	  @Column(name="id")
-	  private int id;
-	 
-	  @Column(name="loginname")
-	  private String loginName;
-	  
-	  @Column(name="password")
+	  @Column(name="empid")
+	  private int empid;
+	 @Column(name="password")
 	  private String password;
-	  
-	  @Column(name="active")
-	  private String active;
-	  
-	  @Column(name="profileno")
-	  private String profileno;
-	  
-	  @Column(name="userdetailsid")
-	  private Integer userdetailsid;
-	  
-	  @Column(name="firstname")
+	@OneToOne(fetch=FetchType.EAGER )
+	@JoinColumn(name="roleId")
+	private Role role;	
+	
+	@Column(name="status")
+	  private String status;
+	@Column(name="firstname")
 	  private String firstname;
-	  
-	  @Column(name="middlename")
+	@Column(name="middlename")
 	  private String middlename;
-	  
-	  @Column(name="lastname")
+	@Column(name="lastname")
 	  private String lastname;
-	  
-	  @Column(name="mailid")
-	  private String mailId;
-	  
-	  @Column(name="alternatemailid")
-	  private String alternatemailId;
-	  
-	  @Column(name="dateofcreation")
-	  private String dateofcreation;
-	  
-	  @Column(name="dob")
-	  private String dob;
-	  
-	  @Column(name="sex")
+	@Column(name="sex")
 	  private String sex;
-	  
-	  @Column(name="address")
-	  private String address;
-	  
-	  @Column(name="phone")
-	  private String phone;
-	  
-	  @Column(name="mobile")
-	  private String mobile;
-	  
-	  @Column(name="deviceuid")
-	  private String deviceUid;
-	  
-	  @Column(name="annuanlincome")
-	  private String annuanlIncome;
-	  
-	  @Column(name="remark")
-	  private String remark;
-	  
-	  @Column(name="supervisor")
-	  private String supervisor;
-	  
-	  public int getId()
-	  {
-	    return this.id;
-	  }
-	  
-	  public void setId(int id)
-	  {
-	    this.id = id;
-	  }
-	  
-	  public String getLoginName()
-	  {
-	    return this.loginName;
-	  }
-	  
-	  public void setLoginName(String loginName)
-	  {
-	    this.loginName = loginName;
-	  }
-	  
-	  public String getPassword()
-	  {
-	    return this.password;
-	  }
-	  
-	  public void setPassword(String password)
-	  {
-	    this.password = password;
-	  }
-	  
-	  public String getActive()
-	  {
-	    return this.active;
-	  }
-	  
-	  public void setActive(String active)
-	  {
-	    this.active = active;
-	  }
-	  
-	  public String getProfileno()
-	  {
-	    return this.profileno;
-	  }
-	  
-	  public void setProfileno(String profileno)
-	  {
-	    this.profileno = profileno;
-	  }
-
-	public Integer getUserdetailsid() {
-		return userdetailsid;
+	@Column(name="doj")
+	  private String doj;
+	@Column(name="repotingto")
+	  private String repotingto;
+	@Column(name="designation")
+	  private String designation;
+	@Column(name="empcode")
+	  private String empcode;
+	  @OneToOne(mappedBy = "emp", cascade = CascadeType.ALL)
+	private EmployeeDetails employeedetails;	
+	
+	public int getEmpid() {
+		return empid;
 	}
-
-	public void setUserdetailsid(Integer userdetailsid) {
-		this.userdetailsid = userdetailsid;
+	public void setEmpid(int empid) {
+		this.empid = empid;
 	}
-
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public String getFirstname() {
 		return firstname;
 	}
-
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-
 	public String getMiddlename() {
 		return middlename;
 	}
-
 	public void setMiddlename(String middlename) {
 		this.middlename = middlename;
 	}
-
 	public String getLastname() {
 		return lastname;
 	}
-
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-
-	public String getMailId() {
-		return mailId;
-	}
-
-	public void setMailId(String mailId) {
-		this.mailId = mailId;
-	}
-
-	public String getAlternatemailId() {
-		return alternatemailId;
-	}
-
-	public void setAlternatemailId(String alternatemailId) {
-		this.alternatemailId = alternatemailId;
-	}
-
-	public String getDateofcreation() {
-		return dateofcreation;
-	}
-
-	public void setDateofcreation(String dateofcreation) {
-		this.dateofcreation = dateofcreation;
-	}
-
-	public String getDob() {
-		return dob;
-	}
-
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-
 	public String getSex() {
 		return sex;
 	}
-
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-
-	public String getAddress() {
-		return address;
+	public String getDoj() {
+		return doj;
+	}
+	public void setDoj(String doj) {
+		this.doj = doj;
+	}
+	public String getRepotingto() {
+		return repotingto;
+	}
+	public void setRepotingto(String repotingto) {
+		this.repotingto = repotingto;
+	}
+	public String getDesignation() {
+		return designation;
+	}
+	public void setDesignation(String designation) {
+		this.designation = designation;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public Role getRole() {
+		return role;
 	}
-
-	public String getPhone() {
-		return phone;
+	public void setRole(Role role) {
+		this.role = role;
 	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public String getPassword() {
+		return password;
 	}
-
-	public String getMobile() {
-		return mobile;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
+	public String getEmpcode() {
+		return empcode;
 	}
-
-	public String getDeviceUid() {
-		return deviceUid;
+	public void setEmpcode(String empcode) {
+		this.empcode = empcode;
 	}
-
-	public void setDeviceUid(String deviceUid) {
-		this.deviceUid = deviceUid;
-	}
-
-	public String getAnnuanlIncome() {
-		return annuanlIncome;
-	}
-
-	public void setAnnuanlIncome(String annuanlIncome) {
-		this.annuanlIncome = annuanlIncome;
-	}
-
-	public String getRemark() {
-		return remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
-
-	public String getSupervisor() {
-		return supervisor;
-	}
-
-	public void setSupervisor(String supervisor) {
-		this.supervisor = supervisor;
-	}
+	
+	
 
 }

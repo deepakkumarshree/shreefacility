@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lms.dao.EmployeeDao;
 import com.lms.model.Employee;
+import com.lms.model.EmployeeDetails;
 @Repository
 @SuppressWarnings("unchecked")
 public class EmployeeDaoImpl implements EmployeeDao{
@@ -18,10 +19,11 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	@Override
 	@Transactional
-	public boolean save(Employee employee) {
+	public boolean save(EmployeeDetails employee) {
 		boolean status=false;
+		sessionFactory.getCurrentSession().saveOrUpdate(employee.getEmp());
 		sessionFactory.getCurrentSession().saveOrUpdate(employee);
-		if(employee.getId()>0)
+		if(employee.getEmp().getEmpid()>0)
 			status=true;
 		else status=false;
 		return status;
@@ -29,18 +31,18 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	
 	@Override
-	public List<Employee> listEmployees() {
+	public List<EmployeeDetails> listEmployees() {
        return sessionFactory.getCurrentSession().createCriteria(Employee.class).list();
 	}
 
 	@Override
-	public Employee getEmployee(int empid) {
+	public EmployeeDetails getEmployee(int empid) {
 		
-		return (Employee) sessionFactory.getCurrentSession().get(Employee.class, empid);
+		return (EmployeeDetails) sessionFactory.getCurrentSession().get(EmployeeDetails.class, empid);
 	}
 
 	@Override
-	public void deleteEmployee(Employee employee) {
+	public void deleteEmployee(EmployeeDetails employee) {
 	     sessionFactory.getCurrentSession().delete(Employee.class);
 	}
 

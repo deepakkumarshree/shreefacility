@@ -44,9 +44,7 @@ public class LoginController {
 	  {
 	    ModelAndView modelandview = null;
 	    modelandview = new ModelAndView("home");
-	    System.out.println("Controller :LoginController Method :home");
-	 
-	    
+	    System.out.println("Controller :LoginController Method :home"); 
 	    return modelandview;
 	  }
 

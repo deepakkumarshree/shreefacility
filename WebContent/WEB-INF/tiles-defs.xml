@@ -7,20 +7,27 @@
 <tiles-definitions>
 	
 
-
-       		<!-- <definition name="baseLayout" template="/WEB-INF/tiles/baseLayout.jsp">
-	       		<put-attribute name="title" value="Template" />
-				<put-attribute name="header" value="/WEB-INF/tiles/Homeheader.jsp" />
-				<put-attribute name="body" value="/WEB-INF/tiles/body.jsp" />
-				<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
-       		</definition> -->
-       		
-			
-			
+	<definition name="baseLayout" template="/views/layout/Layout.jsp">
+			<put-attribute name="title" value="Shree Partners Facilities" />
+			<put-attribute name="header" value="/views/layout/Header.jsp" />
+			<put-attribute name="menu" value="/views/layout/Menu.jsp" />
+			<put-attribute name="body" value="" />
+	</definition>
+	
+	
+		
+		<definition name="innerLayout" template="/jsp/layout/InnerLayout.jsp">
+			<put-attribute name="title" value="Shree Partners Facilities" />
+			<put-attribute name="body" value="" />
+		</definition>
 			<definition name="login" template="/views/LoginPage.jsp">
 			</definition>
-			<definition name="home" template="/views/HomePage.jsp">
+			
+			<definition name="home" extends="baseLayout">
+				<put-attribute name="title" value="Home Page" />
+				<put-attribute name="body" value="/views/HomePage.jsp" />
 			</definition>
+			
 			<definition name="leavetype" template="/views/master/LeaveType.jsp">
 			</definition>
 			<definition name="addemp" template="/views/master/CreateEmployee.jsp">

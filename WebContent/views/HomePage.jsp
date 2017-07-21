@@ -11,13 +11,13 @@
                   <div class="col-lg-10 main-chart">
                     <div class="row mt">
                      <div class="col-md-3 col-sm-3 mb">
-                      		<div class="white-panel pn" style="background-color:#9932CC">
+                      		<div class="white-panel pn" style="background-color:#8FBC8F">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Recruitment</h5>
                       			</div>
 								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p>Descriptions</p>
+									<div class="col-sm-12 col-xs-6 goleft">
+										<p>You Can Register Employee Details and can Update Employee Details and can Delete Employee Details.</p>
 									</div>
 									
 	                      		</div>
@@ -25,13 +25,13 @@
                       		</div>
                       	</div>
                       	<div class="col-md-3 col-sm-3 mb">
-                      		<div class="white-panel pn" style="background-color:#7B68EE">
+                      		<div class="white-panel pn" style="background-color:#F0E68C	">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Profile</h5>
                       			</div>
 								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p>Descriptions</p>
+									<div class="col-sm-12 col-xs-6 goleft">
+										<p>You can see the total Experience and Relevant Experience and Technical Expertise</p>
 									</div>
 									
 	                      		</div>
@@ -40,7 +40,7 @@
                       	</div>
                       	<div class="col-md-3 col-sm-3 mb">
                       	<a href="mytime" class="white-header">
-                      		<div class="white-panel pn donut-chart" style="background-color:#FF8C00">
+                      		<div class="white-panel pn donut-chart" style="background-color:#DAA520">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Time</h5>
                       			</div>
@@ -53,13 +53,13 @@
                       	</div>
                       	<div class="col-md-3 mb">
 							<!-- WHITE PANEL - TOP USER -->
-							<div class="white-panel pn" style="background-color:#FFFF00">
+							<div class="white-panel pn" style="background-color:#F08080">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Approval</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-6">
-										<p>Descriptions</p>										
+									<div class="col-sm-12 col-xs-6 goleft">
+										<p>Your Leave Pending with your Supervisor and Your reimbursement claim pending HRD.</p>
 									</div>									
 								</div>
 							</div>
@@ -73,13 +73,13 @@
 					<div class="row">
 						 <div class="col-md-3 mb">
 							<!-- WHITE PANEL - TOP USER -->
-							<div class="white-panel pn" style="background-color:#6495ED">
+							<div class="white-panel pn" style="background-color:#90EE90">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Help Desk</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-6">
-										<p>Descriptions</p>										
+									<div class="col-md-12">
+										<p>Please contact IT Support team for any IT help and contact Transport helpdesk for Transport Support  </p>										
 									</div>									
 								</div>
 							</div>
@@ -90,8 +90,8 @@
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Appraisal</h5>
                       			</div>
 								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p>Descriptions</p>
+									<div class="col-sm-12 col-xs-6 goleft">
+										<p>you can view annual appraisal status</p>
 									</div>
 	                      		</div>							
 							</div>
@@ -106,20 +106,20 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Training</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-6">
-										<p>Descriptions</p>										
+									<div class="col-md-12">
+										<p>You can view training provided by SIPL</p>										
 									</div>									
 								</div>
 							</div>
 						</div>      
 							<div class="col-md-3 col-sm-3 mb">
-                      		<div class="white-panel pn donut-chart" style="background-color:#98FB98">
+                      		<div class="white-panel pn donut-chart" style="background-color:#20B2AA">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Expenses</h5>
                       			</div>
 								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p>Descriptions</p>
+									<div class="col-sm-12 col-xs-6 goleft">
+										<p>You can see your daily Expenses from here</p>
 									</div>
 	                      		</div>							
 							</div>
@@ -133,8 +133,8 @@
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Downloads</h5>
                       			</div>
 								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p>Descriptions</p>
+									<div class="col-sm-12 col-xs-6 goleft">
+										<p>You can download salary slip and form16 from here</p>
 									</div>
 									
 	                      		</div>
@@ -149,8 +149,8 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>Admin Panel</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-6">
-										<p>Descriptions</p>										
+									<div class="col-md-12">
+										<p>you can view the request pending for approval </p>										
 									</div>									
 								</div>
 							</div>
@@ -162,8 +162,8 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Transport</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-6">
-										<p>Descriptions</p>										
+									<div class="col-md-12">
+										<p>you can view the transport request pending with transport admin</p>										
 									</div>									
 								</div>
 							</div>
@@ -175,8 +175,8 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Documents</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-6">
-										<p>Descriptions</p>										
+									<div class="col-md-12">
+										<p>You can see salary slip and form16 from here</p>										
 									</div>									
 								</div>
 							</div>

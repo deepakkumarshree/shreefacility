@@ -76,11 +76,11 @@
 			<tiles:insertAttribute name="body" />
 		</div>
 			
-	  	<footer class="main-footer">
+	  	<footer class="main-footer" style="padding-top: 100px;">
 	    	<div class="pull-right hidden-xs">
 	      		<b>Version</b> 1.1&nbsp;&nbsp;&nbsp;&nbsp;
 	    	</div>
-	    	<strong><label style="padding-left:300px"></label><a href="http://www.shreepartners.com/">Copyright © 2017 Shreepartners.com All rights reserved.</a></strong>  
+	    	<strong><label style="padding-left:300px;"></label><a href="http://www.shreepartners.com/">Copyright © 2017 Shreepartners.com All rights reserved.</a></strong>  
 	  	</footer>
 	</div>
 </body>

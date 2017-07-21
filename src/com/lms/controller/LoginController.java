@@ -47,6 +47,15 @@ public class LoginController {
 	    System.out.println("Controller :LoginController Method :home"); 
 	    return modelandview;
 	  }
+	 @RequestMapping("/changepassword")
+	  public ModelAndView changepassword()throws Exception
+	  {
+	    ModelAndView modelandview = null;
+	    modelandview = new ModelAndView("changepassword");
+	    System.out.println("Controller :LoginController Method :changepassword"); 
+	    return modelandview;
+	  }
+	 
 
 
 }

@@ -15,7 +15,7 @@
                           <span>Profile</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Change Password</a></li>                          
+                          <li><a  href="changepassword">Change Password</a></li>                          
                       </ul>
                   </li>
               </ul>

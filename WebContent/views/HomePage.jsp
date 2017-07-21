@@ -11,6 +11,7 @@
                   <div class="col-lg-10 main-chart">
                     <div class="row mt">
                      <div class="col-md-3 col-sm-3 mb">
+                     	<a href="mytime" class="white-header">
                       		<div class="white-panel pn" style="background-color:#8FBC8F">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Recruitment</h5>
@@ -23,8 +24,10 @@
 	                      		</div>
 	                      		
                       		</div>
+                      		</a>
                       	</div>
                       	<div class="col-md-3 col-sm-3 mb">
+                      	 <a href="mytime" class="white-header">
                       		<div class="white-panel pn" style="background-color:#F0E68C	">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Profile</h5>
@@ -37,6 +40,7 @@
 	                      		</div>
 	                      		
                       		</div>
+                      		</a>
                       	</div>
                       	<div class="col-md-3 col-sm-3 mb">
                       	<a href="mytime" class="white-header">
@@ -53,6 +57,7 @@
                       	</div>
                       	<div class="col-md-3 mb">
 							<!-- WHITE PANEL - TOP USER -->
+						<a href="mytime" class="white-header">
 							<div class="white-panel pn" style="background-color:#F08080">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Approval</h5>
@@ -63,6 +68,7 @@
 									</div>									
 								</div>
 							</div>
+						</a>
 						</div>      
                       	
                       	
@@ -72,7 +78,7 @@
                                         				
 					<div class="row">
 						 <div class="col-md-3 mb">
-							<!-- WHITE PANEL - TOP USER -->
+						<a href="mytime" class="white-header">
 							<div class="white-panel pn" style="background-color:#90EE90">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Help Desk</h5>
@@ -83,8 +89,10 @@
 									</div>									
 								</div>
 							</div>
+							</a>
 						</div> 
 						<div class="col-md-3 col-sm-3 mb">
+						 <a href="mytime" class="white-header">
                       		<div class="white-panel pn donut-chart" style="background-color:#FFEBCD">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Appraisal</h5>
@@ -95,12 +103,13 @@
 									</div>
 	                      		</div>							
 							</div>
+						</a>
                       	</div>
                       	
                       	
                       	
 						<div class="col-md-3 mb">
-							<!-- WHITE PANEL - TOP USER -->
+						 <a href="mytime" class="white-header">
 							<div class="white-panel pn" style="background-color:#3CB371">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Training</h5>
@@ -111,8 +120,10 @@
 									</div>									
 								</div>
 							</div>
+							</a>
 						</div>      
 							<div class="col-md-3 col-sm-3 mb">
+								<a href="mytime" class="white-header">
                       		<div class="white-panel pn donut-chart" style="background-color:#20B2AA">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Expenses</h5>
@@ -123,11 +134,13 @@
 									</div>
 	                      		</div>							
 							</div>
+							</a>
                       	</div>
                       	
                   </div>
                   <div class="row">
                   <div class="col-md-3 col-sm-3 mb">
+                  		<a href="mytime" class="white-header">
                       		<div class="white-panel pn" style="background-color:#CD853F">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Downloads</h5>
@@ -140,10 +153,11 @@
 	                      		</div>
 	                      		
                       		</div>
+                      		</a>
                       	</div>
 						
 						<div class="col-md-3 mb">
-							<!-- WHITE PANEL - TOP USER -->
+						<a href="mytime" class="white-header">
 							<div class="white-panel pn" style="background-color:#DB7093">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>Admin Panel</h5>
@@ -154,9 +168,10 @@
 									</div>									
 								</div>
 							</div>
+							</a>
 						</div>      
 						<div class="col-md-3 mb">
-							<!-- WHITE PANEL - TOP USER -->
+							<a href="mytime" class="white-header">
 							<div class="white-panel pn" style="background-color:#FFDAB9">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Transport</h5>
@@ -167,9 +182,10 @@
 									</div>									
 								</div>
 							</div>
+							</a>
 						</div>   
 						<div class="col-md-3 mb">
-							<!-- WHITE PANEL - TOP USER -->
+							<a href="mytime" class="white-header">
 							<div class="white-panel pn" style="background-color:#C0C0C0">
 								<div class="white-header">
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Documents</h5>
@@ -180,6 +196,7 @@
 									</div>									
 								</div>
 							</div>
+							</a>
 						</div>       
                   </div>
               </div>

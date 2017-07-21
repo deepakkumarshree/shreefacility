@@ -7,8 +7,6 @@
       <!--main content start-->
       <section id="main-content">
       <section class="wrapper">  
-      
-    <div class="row">	<div class="col-lg-10" style="padding-top: 100px"></div></div>
 	<div class="container-fluid">
 		<h4 class="widgettitle">Create Employee</h4>
 		
@@ -242,7 +240,6 @@
 						value="Exit">
 				</div>
 			</div>
-
 
 
 		</form:form>

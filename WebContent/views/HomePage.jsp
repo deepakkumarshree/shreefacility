@@ -78,7 +78,7 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Help Desk</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-12 col-xs-6 goleft">
 										<p>Please contact IT Support team for any IT help and contact Transport helpdesk for Transport Support  </p>										
 									</div>									
 								</div>
@@ -91,7 +91,7 @@
                       			</div>
 								<div class="row">
 									<div class="col-sm-12 col-xs-6 goleft">
-										<p>you can view annual appraisal status</p>
+										<p>You can view annual appraisal status</p>
 									</div>
 	                      		</div>							
 							</div>
@@ -106,7 +106,7 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Training</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-12 col-xs-6 goleft">
 										<p>You can view training provided by SIPL</p>										
 									</div>									
 								</div>

@@ -149,8 +149,8 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>Admin Panel</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-12">
-										<p>you can view the request pending for approval </p>										
+									<div class="col-md-12 col-xs-6 goleft">
+										<p>You can view the request pending for approval </p>										
 									</div>									
 								</div>
 							</div>
@@ -162,8 +162,8 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Transport</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-12">
-										<p>you can view the transport request pending with transport admin</p>										
+									<div class="col-md-12 col-xs-6 goleft">
+										<p>You can view the transport request pending with transport admin</p>										
 									</div>									
 								</div>
 							</div>
@@ -175,7 +175,7 @@
 								<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Documents</h5>
 								</div>								
 								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-12 col-xs-6 goleft">
 										<p>You can see salary slip and form16 from here</p>										
 									</div>									
 								</div>

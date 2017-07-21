@@ -4,6 +4,7 @@ package com.lms.daoImp;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 
 import org.hibernate.criterion.Restrictions;
@@ -50,5 +51,16 @@ public class LoginDaoImp implements LoginDao{
 	    }
 	    return false;
 	  }
-
+	  public boolean changePassword(String oldPass,String newPass,String empCode)
+	  {
+	        Query qry = sessionFactory.getCurrentSession().createQuery("update Employee e set password=:passnew where e.password=:passold and e.empcode=:empcode");
+			
+	        qry.setParameter("passnew",newPass);
+	        qry.setParameter("passold",oldPass);
+	        qry.setParameter("empcode",empCode);
+	        int res = qry.executeUpdate();
+	        
+	        if(res>0)return true;
+	        else return false;
+	  }
 }

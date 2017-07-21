@@ -20,5 +20,11 @@ public class LoginServiceImp implements LoginService{
 		  	
 		    return loginDao.isValidUser(userBean, request);
 	  }
+	  @Transactional
+	  public boolean changePassword(String oldPass, String newPass,String empCode)
+	  {
+		  	
+		    return loginDao.changePassword(oldPass, newPass,empCode);
+	  }
 
 }

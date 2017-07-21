@@ -25,7 +25,7 @@
 			</div>
 		</div>
 					
-		<form:form role="form" id="changepassword-form" name="changepassword-form" action="saveChangePassword.htm" commandName="command">
+		<form:form role="form" id="changepassword-form" name="changepassword-form" action="updatepassword" >
 
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -44,8 +44,8 @@
 						<input type="password" id="confirmNewPassword" name="confirmNewPassword" class="form-control input-sm input-xlarge" placeholder="Confirm Password" />
 					</div>
 	
-					<button type="submit" class="btn btn-default">Save</button>
-					<input type="button" class="btn btn-default" onClick="parent.location='dashboard'"  value="Exit">
+					<button type="submit" class="btn btn-theme">Save</button>
+					<input type="button" class="btn btn-theme" onClick="parent.location='dashboard'"  value="Exit">
 				</div>
 			</div>
 		</form:form>

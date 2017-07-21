@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import com.lms.model.Employee;
@@ -53,6 +54,16 @@ public class LoginController {
 	    ModelAndView modelandview = null;
 	    modelandview = new ModelAndView("changepassword");
 	    System.out.println("Controller :LoginController Method :changepassword"); 
+	    return modelandview;
+	  }
+	 @RequestMapping("/updatepassword")
+	  public ModelAndView updatepassword(@RequestParam("password") String oldPass , @RequestParam("newPassword") String newPass)throws Exception
+	  {
+	    ModelAndView modelandview = null;
+	    modelandview = new ModelAndView("changepassword");
+	    System.out.println("Controller :LoginController Method :changepassword");
+	    boolean status = loginService.changePassword(oldPass, newPass, "Emp001");
+	    modelandview = new ModelAndView("redirect:login", "status",status);
 	    return modelandview;
 	  }
 	 

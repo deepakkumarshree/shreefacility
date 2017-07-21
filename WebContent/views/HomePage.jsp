@@ -11,7 +11,7 @@
                   <div class="col-lg-10 main-chart">
                     <div class="row mt">
                      <div class="col-md-3 col-sm-3 mb">
-                     	<a href="mytime" class="white-header">
+                     	<a href="myrecruitment" class="white-header">
                       		<div class="white-panel pn" style="background-color:#8FBC8F">
                       			<div class="white-header">
 						  			<h5><i class="fa fa-pencil-square-o fa-2x"></i>My Recruitment</h5>

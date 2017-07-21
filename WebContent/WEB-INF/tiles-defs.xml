@@ -47,9 +47,7 @@
 			</definition>
 			<!-- <definition name="addemp" template="/views/master/CreateEmployee.jsp">
 			</definition> -->
-			<definition name="addemp" extends="baseLayout">
-				<put-attribute name="title" value="Create Employee" />
-				<put-attribute name="body" value="/views/master/CreateEmployee.jsp" />
+			<definition name="addemp" template="/views/master/CreateEmployee.jsp">				
 			</definition>
 			
 			

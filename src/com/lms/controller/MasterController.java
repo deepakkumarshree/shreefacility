@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lms.bean.UserBean;
 import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
 import com.lms.model.LeaveType;
@@ -22,7 +23,7 @@ public class MasterController {
 	
 	@Autowired
 	private EmployeeService employeeService;	
-	
+	private UserBean userBean;
 	
 	@RequestMapping("/showEmployee")
 	public ModelAndView addEmployee()throws Exception{

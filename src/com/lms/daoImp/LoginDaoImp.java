@@ -11,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.lms.bean.UserBean;
 import com.lms.dao.LoginDao;
 import com.lms.model.Employee;
 
@@ -32,13 +33,16 @@ public class LoginDaoImp implements LoginDao{
 	        //.add(Restrictions.eq("active", Boolean.valueOf(true))));
 	      
 	      Employee u = (Employee)userCriteria.uniqueResult();
-	      String name = ""; 
+	      
 	      if(u!=null){
-		      userId = u.getEmpid();
+	    	  userId=u.getEmpid();
+	    	  UserBean user=new UserBean();
+	    	  user.setEmpCode(u.getEmpcode());
+	    	  user.setFirstName(u.getFirstname());
+	    	  user.setLastName(u.getLastname());
 		      HttpSession session = request.getSession();
-		      session.setAttribute("userid", Integer.valueOf(userId));
-		      name = u.getFirstname() + " " + u.getLastname(); 
-		      session.setAttribute("username", name);
+		      session.setAttribute("user", user);
+		    
 	      }
 	      System.out.println(userId);
 	      if (userId > 0) {

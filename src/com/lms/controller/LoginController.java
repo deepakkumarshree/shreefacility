@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
+
+import com.lms.bean.UserBean;
 import com.lms.model.Employee;
 import com.lms.service.LoginService;
 
@@ -17,7 +19,7 @@ import com.lms.service.LoginService;
 public class LoginController {
 	@Autowired
 	private LoginService loginService;
-
+	private UserBean userBean;
 	
 	 @RequestMapping("login")
 	  public ModelAndView login() throws Exception
@@ -40,29 +42,44 @@ public class LoginController {
 	    return modelandview;
 	  }
 	 @RequestMapping("/dashboard")
-	  public ModelAndView dashboard()
+	  public ModelAndView dashboard(HttpServletRequest request)
 	    throws Exception
 	  {
 	    ModelAndView modelandview = null;
-	    modelandview = new ModelAndView("home");
-	    System.out.println("Controller :LoginController Method :home"); 
+	    userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	modelandview = new ModelAndView("home");
+	    	System.out.println("Controller :LoginController Method :home"); 
+	    }
 	    return modelandview;
 	  }
 	 @RequestMapping("/changepassword")
-	  public ModelAndView changepassword()throws Exception
+	  public ModelAndView changepassword(HttpServletRequest request)throws Exception
 	  {
 	    ModelAndView modelandview = null;
-	    modelandview = new ModelAndView("changepassword");
-	    System.out.println("Controller :LoginController Method :changepassword"); 
+	    userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	modelandview = new ModelAndView("changepassword");
+	    	System.out.println("Controller :LoginController Method :changepassword"); 
+	    }
+	    else modelandview = new ModelAndView("redirect:login", "status",false);
+	    
 	    return modelandview;
 	  }
 	 @RequestMapping("/updatepassword")
-	  public ModelAndView updatepassword(@RequestParam("password") String oldPass , @RequestParam("newPassword") String newPass)throws Exception
+	  public ModelAndView updatepassword(HttpServletRequest request,@RequestParam("password") String oldPass , @RequestParam("newPassword") String newPass)throws Exception
 	  {
 	    ModelAndView modelandview = null;
-	    modelandview = new ModelAndView("changepassword");
-	    System.out.println("Controller :LoginController Method :changepassword");
-	    boolean status = loginService.changePassword(oldPass, newPass, "Emp001");
+	    boolean status =false;
+	    userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	modelandview = new ModelAndView("changepassword");
+	    	System.out.println("Controller :LoginController Method :changepassword");
+	    	 status = loginService.changePassword(oldPass, newPass, "Emp001");
+	    }
 	    modelandview = new ModelAndView("redirect:login", "status",status);
 	    return modelandview;
 	  }

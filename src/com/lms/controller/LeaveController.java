@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lms.bean.UserBean;
 import com.lms.model.LeaveType;
 import com.lms.service.LeaveTypeService;
 
@@ -20,6 +21,7 @@ public class LeaveController {
 	
 	@Autowired
 	private LeaveTypeService leaveTypeService;
+	private UserBean userBean;
 		
 	@RequestMapping("/addLeave")
 	public ModelAndView showLeaveType() throws Exception{

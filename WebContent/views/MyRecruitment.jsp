@@ -11,7 +11,7 @@
                                         				
 					<div class="row">
 						 
-                      	<div class="col-md-12 col-sm-12 mb">
+                      	<div class="col-md-12 col-sm-12">
                       		<ul class="nav nav-tabs" id="myTab">
 								<li class="active"><a href="#addemp" data-toggle="tab">Create Employee</a></li>
 								<li><a href="#viewemp" data-toggle="tab">View Employee</a></li>
@@ -20,8 +20,17 @@
                       	</div>
                       	    
                   </div>
-                  <jsp:include page="/showEmployee" ></jsp:include>
-              </div>
+                  <div class="tab-content">
+						<div class=" backdiv tab-pane fade in active" id="addemp">
+		                  <jsp:include page="/showEmployee" ></jsp:include>
+		              </div>
+		             
+		               <div class="tab-pane backdiv" id="viewemp">					
+			                  
+			             
+		              </div>
+		            </div>
+			</div>
           </section></section>
       </section>
   </body>

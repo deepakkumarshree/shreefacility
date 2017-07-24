@@ -81,6 +81,8 @@
 							 maxlength="100"/>
 					</div>
 				</div>
+				</div>
+				<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
@@ -111,7 +113,7 @@
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Email Id</label>
@@ -120,12 +122,14 @@
 							 maxlength="100"/>
 					</div>
 				</div>
+				</div>
+				<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Phone</label>
 							<form:input id="phone" path="phone" tabindex="1" class="form-control"
-							cssClass="form-control" placeholder="phone"
+							cssClass="form-control" placeholder="Phone"
 							 maxlength="30"/>
 					</div>
 				</div>
@@ -138,35 +142,15 @@
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="required">Adhar No</label>
+						<label class="required">Aadhar No</label>
 							<form:input id="pan" path="pan" tabindex="1"
-							cssClass="form-control" placeholder="Pan No"
+							cssClass="form-control" placeholder="Aadhar"
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Permanent Address</label>
-							<form:textarea id="paddress" path="paddress" tabindex="1" cols="3" rows="2"
-							cssClass="form-control" placeholder="Permanent Address"
-							 maxlength="100"/>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Current Address</label>
-							<form:textarea id="caddress" path="caddress" tabindex="1" cols="3" rows="2"
-							cssClass="form-control" placeholder="Current Address"
-							 maxlength="100"/>
-					</div>
-				</div>
-				
-				
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
@@ -187,6 +171,29 @@
 							</form:select>
 					</div>
 				</div>
+				</div>
+				<div class="row">
+				<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Permanent Address</label>
+							<form:textarea id="paddress" path="paddress" tabindex="1" cols="3" rows="2"
+							cssClass="form-control" placeholder="Permanent Address"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Current Address</label>
+							<form:textarea id="caddress" path="caddress" tabindex="1" cols="3" rows="2"
+							cssClass="form-control" placeholder="Current Address"
+							 maxlength="100"/>
+					</div>
+				</div>
+				
+				
+				
 				
 			
 				</div>
@@ -235,15 +242,15 @@
 							<div class="form-group">
 								<label class="required">Phone</label>
 									<input type="text" id="emconphone" name="emconphone" class="form-control" tabindex="1"
-									class="form-control" placeholder="emconphone"
+									class="form-control" placeholder="Phone"
 									 maxlength="100"/>
 							</div>
 						</div>	
-					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">		
+					<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12">		
 							<div class="form-group">
 								<label>Contact Address</label>
-									<textarea id="emconaddress" name="emconaddress" tabindex="1" rows="2" cols="2"
-									class="form-control" placeholder="emconaddress"
+									<textarea id="emconaddress" name="emconaddress" tabindex="1" rows="1" cols="2"
+									class="form-control" placeholder="Address"
 									></textarea>
 							</div>
 						</div>	

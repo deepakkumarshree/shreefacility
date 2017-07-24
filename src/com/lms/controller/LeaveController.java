@@ -22,6 +22,7 @@ public class LeaveController {
 	@Autowired
 	private LeaveTypeService leaveTypeService;
 	private UserBean userBean;
+	
 		
 	@RequestMapping("/addLeave")
 	public ModelAndView showLeaveType() throws Exception{

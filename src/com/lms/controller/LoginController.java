@@ -78,7 +78,7 @@ public class LoginController {
 	    {
 	    	modelandview = new ModelAndView("changepassword");
 	    	System.out.println("Controller :LoginController Method :changepassword");
-	    	 status = loginService.changePassword(oldPass, newPass, "Emp001");
+	    	 status = loginService.changePassword(oldPass, newPass, userBean.getEmpCode());
 	    }
 	    modelandview = new ModelAndView("redirect:login", "status",status);
 	    return modelandview;

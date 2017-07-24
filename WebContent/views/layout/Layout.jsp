@@ -31,34 +31,25 @@
    	<link href="resources/assets/css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-	<link rel="stylesheet" href="resources/assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="resources/assets/bootstrap/css/jquery-ui.css">
-	<link rel="stylesheet" href="resources/assets/bootstrap/css/jquery.datetimepicker.css">	
+	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/bootstrap/css/jquery-ui.css">
 	<link rel="stylesheet" href="resources/assets/bootstrap/css/jqwidgets/jqx.base.css" type="text/css" />
   	<link rel="stylesheet" href="resources/assets/plugins/datatables/dataTables.bootstrap.css">   
+  	<link rel="stylesheet" href="resources/bootstrap/css/jquery.datetimepicker.css">
     
     <!-- Custom styles for this template -->
     <link href="resources/assets/css/style.css" rel="stylesheet">
     <link href="resources/assets/css/style-responsive.css" rel="stylesheet">
-    <script src="resources/assets/js/chart-master/Chart.js"></script> 
-    <script src="resources/assets/js/jquery.js"></script>
-    <script src="resources/assets/js/jquery-1.8.3.min.js"></script>
-    <script src="resources/assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="resources/assets/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="resources/assets/js/jquery.scrollTo.min.js"></script>
-    <script src="resources/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="resources/assets/js/jquery.sparkline.js"></script>
+ 	<script src="resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
+	<script src="resources/js/layout/jquery-ui.js" /></script>
+	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
+	<script src="resources/dist/js/app.min.js"></script>
+	<script src="resources/js/layout/validate.min.js" /></script>
+	<script src="resources/js/layout/setcase.js" /></script>
+	<script src="resources/js/layout/jquery.datetimepicker.js" /></script>
 
 
-    <!--common script for all pages-->
-    <script src="resources/assets/js/common-scripts.js"></script>
-    
-    <script type="text/javascript" src="resources/assets/js/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="resources/assets/js/gritter-conf.js"></script>
 
-    <!--script for this page-->
-    <script src="resources/assets/js/sparkline-chart.js"></script>    
-	<script src="resources/assets/js/zabuto_calendar.js"></script>	
   </head>
 	
 </head>

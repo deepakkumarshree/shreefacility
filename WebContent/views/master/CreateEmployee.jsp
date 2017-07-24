@@ -3,10 +3,7 @@
 <html>
 
 <body>
-     <!--  <section id="container" >
-      main content start
-      <section id="main-content">
-      <section class="wrapper">   -->
+ 
 	<div class="container-fluid">
 		<h4 class="widgettitle">Create Employee</h4>
 		
@@ -70,23 +67,17 @@
 					<div class="form-group">
 						<label class="required">Date of Birth</label>
 							<form:input id="dob" path="dob" tabindex="1"
-							cssClass="form-control" placeholder="DOB"
+							cssClass="form-control dateOfBirth" placeholder="DOB"
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-1 col-md-4 col-sm-4 col-xs-12">
-					<div class="form-group">
-						<label>Age</label>
-							<input type="text" id="age" name="age" tabindex="1"
-							class="form-control" placeholder="0" readonly="readonly"	/>
-					</div>
-				</div>
+				
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Date of Join</label>
 							<form:input id="emp.doj" path="emp.doj" tabindex="1"
-							cssClass="form-control" placeholder="DOJ"
+							cssClass="form-control dateOfJoining" placeholder="DOJ"
 							 maxlength="100"/>
 					</div>
 				</div>
@@ -275,10 +266,11 @@
 		</form:form>
 
 	</div>
-	<!-- </section></section></section> -->
+
 </body>
   <script>
 			$(document).ready(function() {
+				
 				var url	=	jQuery(location).attr('href');
 				var status = url.split("?status=")[1];
 				if(status!=undefined)
@@ -299,6 +291,27 @@
 				}
 				$("input").focus(function() {
 					 $(this).attr('placeholder', '');
+					 
+				});
+				
+				$(".dateOfBirth").datetimepicker({
+					format : 'd/m/Y',
+					changeMonth : true,
+					changeYear : true,
+					timepicker : false,
+					closeOnDateSelect : true,
+					scrollInput : false,
+					maxDate:'0',
+				});
+				
+				$(".dateOfJoining").datetimepicker({
+					format : 'd/m/Y',
+					changeMonth : true,
+					changeYear : true,
+					timepicker : false,
+					closeOnDateSelect : true,
+					scrollInput : false,
+					maxDate:0, 
 				});
 			});
 

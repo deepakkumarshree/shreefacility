@@ -35,11 +35,9 @@
 	<link rel="stylesheet" href="resources/bootstrap/css/jquery-ui.css">
 	<link rel="stylesheet" href="resources/assets/bootstrap/css/jqwidgets/jqx.base.css" type="text/css" />
   	<link rel="stylesheet" href="resources/assets/plugins/datatables/dataTables.bootstrap.css">   
-  	<link rel="stylesheet" href="resources/bootstrap/css/jquery.datetimepicker.css">
+  	<link rel="stylesheet" href="resources/bootstrap/css/jquery.datetimepicker.css"> 	
     
-    <!-- Custom styles for this template -->
-    <link href="resources/assets/css/style.css" rel="stylesheet">
-    <link href="resources/assets/css/style-responsive.css" rel="stylesheet">
+    <!-- JS -->
  	<script src="resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
 	<script src="resources/js/layout/jquery-ui.js" /></script>
 	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
@@ -47,15 +45,15 @@
 	<script src="resources/js/layout/validate.min.js" /></script>
 	<script src="resources/js/layout/setcase.js" /></script>
 	<script src="resources/js/layout/jquery.datetimepicker.js" /></script>
-
-
-
+	 <script class="include" type="text/javascript" src="resources/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="resources/assets/js/jquery.scrollTo.min.js"></script>
+    <script src="resources/assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="resources/assets/js/jquery.sparkline.js"></script>
+    <script src="resources/assets/js/common-scripts.js"></script>    
+    <script type="text/javascript" src="resources/assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="resources/assets/js/gritter-conf.js"></script>
   </head>
-	
 </head>
-
-<!-- skin-black-light -->
-
 <body class="hold-transition skin-blue sidebar-mini">
 	<div>
 	

@@ -38,7 +38,8 @@ public class LoginController {
 	    System.out.println("Controller :LoginController Method :showLogin");
 	    boolean status = loginService.isValidUser(emp, request);
 	    if(!status) modelandview = new ModelAndView("redirect:login", "status",status);
-	    
+	    userBean = (UserBean)request.getSession().getAttribute("user");
+	    modelandview.addObject("userBean", userBean);
 	    return modelandview;
 	  }
 	 @RequestMapping("/dashboard")

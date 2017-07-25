@@ -49,6 +49,9 @@
 			</definition> -->
 			<definition name="addemp" template="/views/master/CreateEmployee.jsp">				
 			</definition>
+			<definition name="allemp" template="/views/master/EmpList.jsp">				
+			</definition>
+			
 			
 			
 			

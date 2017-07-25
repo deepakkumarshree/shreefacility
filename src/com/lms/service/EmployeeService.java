@@ -9,7 +9,7 @@ import com.lms.model.EmployeeDetails;
 
 
 public interface EmployeeService {
-	public List<Employee> getAll();
+	public List<EmployeeDetails> getAll();
 	public Employee get(int empId);
 	public boolean save(EmployeeDetails leaveType,HttpServletRequest request);
 	public boolean update(EmployeeDetails leaveType,HttpServletRequest request);

@@ -146,7 +146,7 @@
 
 					<div class="form-group">
 						<label class="required">Aadhar No</label>
-							<form:input id="pan" path="pan" tabindex="1"
+							<form:input id="aadhar" path="pan" tabindex="1"
 							cssClass="form-control" placeholder="Aadhar"
 							 maxlength="100"/>
 					</div>
@@ -197,25 +197,7 @@
 				
 			
 				</div>
-			<%-- 	<div class="row">
-				
-				
-				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Status</label>
-							<form:select id="emp.status" path="emp.status" tabindex="1"
-							cssClass="form-control"
-							 maxlength="100">
-							 <form:option value="Active">active</form:option>
-							  <form:option value="Inactive">inactive</form:option>
-							  </form:select>
-					</div>
-				</div>
-			
-				
-				
-				</div> --%>	
+	
 			<div class="row">
 				<div class="col-lg-12 col-md-4 col-sm-4 col-xs-12">		
 					<h4 class="widgettitle">Emergency Contact Detail</h4>
@@ -328,12 +310,58 @@
 					$( "#emp-form" ).validate({
 					  rules: {					
 						emrelation: {
-							required : true,
-							number : true,
-							maxlength : "4",
-							minlength : "4",
+							required : true,							
 						},
 						'emp.firstname': {
+							required : true,
+						},
+						'emp.lastname': {
+							required : true,
+						},
+						'emp.sex': {
+							required : true,
+						},
+						'dob': {
+							required : true,
+						},
+						'emp.doj': {
+							required : true,
+						},
+						
+						'emp.status': {
+							required : true,
+						},
+						'emailId': {
+							required : true,
+						},
+						'phone': {
+							required : true,
+						},
+						'pan': {
+							required : true,
+						},
+						'aadhar': {
+							required : true,
+						},
+						'emp.repotingto': {
+							required : true,
+						},
+						'emp.designation': {
+							required : true,
+						},
+						'paddress': {
+							required : true,
+						},
+						'caddress': {
+							required : true,
+						},
+						'emconname': {
+							required : true,
+						},
+						'emrelation': {
+							required : true,
+						},
+						'emconphone': {
 							required : true,
 						},
 						

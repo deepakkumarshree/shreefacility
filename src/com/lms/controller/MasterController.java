@@ -65,4 +65,19 @@ public class MasterController {
 	    
 		return modelAndView;
 		}
+	@RequestMapping("/showEmployeeList")
+	public ModelAndView showEmployeeList(HttpServletRequest request)throws Exception{
+	 
+		System.out.println("Controller :MasterController Method :showEmployeeList");
+	   ModelAndView modelAndView = null;
+	   userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	modelAndView = new ModelAndView("allemp","empBean",new EmployeeDetails());	
+	    	modelAndView.addObject("emplist", employeeService.getAll());
+	    }
+	    else  modelAndView = new ModelAndView("redirect:login", "status",-1);
+	   
+	   return modelAndView;
+	}
 }

@@ -1,8 +1,9 @@
+<%@page import="com.lms.bean.UserBean"%>
 <aside class="main-sidebar">
  <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">
               	  <p class="centered"><a href="#"><img src="resources/images/avatar5.png" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">${userBean.firstName}  ${userBean.lastName}</h5>
+              	  <h5 class="centered"><%=request.getSession().getAttribute("username")%></h5>
                   <li class="mt">
                       <a class="active" href="dashboard">
                           <i class="fa fa-dashboard"></i>

@@ -21,13 +21,12 @@
                       	    
                   </div>
                   <div class="tab-content">
-						<div class="  tab-pane fade in active" id="addemp">
+						<div class=" backdiv tab-pane fade in active" id="addemp">
 		                  <jsp:include page="/showEmployee" ></jsp:include>
 		              </div>
 		             
-		               <div class="tab-pane backdiv" id="viewemp">					
-			                  
-			             
+		               <div class="tab-pane backdiv" id="viewemp">	
+		               	<jsp:include page="/showEmployeeList" ></jsp:include>		
 		              </div>
 		          </div>
 			</div>

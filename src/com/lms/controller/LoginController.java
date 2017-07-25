@@ -39,7 +39,7 @@ public class LoginController {
 	    boolean status = loginService.isValidUser(emp, request);
 	    if(!status) modelandview = new ModelAndView("redirect:login", "status",status);
 	    userBean = (UserBean)request.getSession().getAttribute("user");
-	    modelandview.addObject("userBean", userBean);
+	    request.getSession().setAttribute("username",userBean.getFirstName()+" "+ userBean.getLastName());
 	    return modelandview;
 	  }
 	 @RequestMapping("/dashboard")

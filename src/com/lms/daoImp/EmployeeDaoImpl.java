@@ -31,8 +31,8 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	
 	@Override
-	public List<EmployeeDetails> listEmployees() {
-       return sessionFactory.getCurrentSession().createCriteria(Employee.class).list();
+	public List<EmployeeDetails> getAll() {
+       return sessionFactory.getCurrentSession().createCriteria(EmployeeDetails.class).list();
 	}
 
 	@Override

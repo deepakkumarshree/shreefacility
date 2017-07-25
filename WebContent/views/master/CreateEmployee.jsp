@@ -3,10 +3,7 @@
 <html>
 
 <body>
-     <!--  <section id="container" >
-      main content start
-      <section id="main-content">
-      <section class="wrapper">   -->
+ 
 	<div class="container-fluid">
 		<h4 class="widgettitle">Create Employee</h4>
 		
@@ -22,7 +19,7 @@
 			</div>
 		</div>
 
-		<form:form role="form" id="leavetype-form" name="leavetype-form" method="POST" action="saveEmployee" commandName="empBean">
+		<form:form role="form" id="emp-form" name="emp-form" method="POST" action="saveEmployee" commandName="empBean">
 
 
 				<div class="row">
@@ -70,26 +67,22 @@
 					<div class="form-group">
 						<label class="required">Date of Birth</label>
 							<form:input id="dob" path="dob" tabindex="1"
-							cssClass="form-control" placeholder="DOB"
+							cssClass="form-control dateOfBirth" placeholder="DOB"
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-1 col-md-4 col-sm-4 col-xs-12">
-					<div class="form-group">
-						<label>Age</label>
-							<input type="text" id="age" name="age" tabindex="1"
-							class="form-control" placeholder="0" readonly="readonly"	/>
-					</div>
-				</div>
+				
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Date of Join</label>
 							<form:input id="emp.doj" path="emp.doj" tabindex="1"
-							cssClass="form-control" placeholder="DOJ"
+							cssClass="form-control dateOfJoining" placeholder="DOJ"
 							 maxlength="100"/>
 					</div>
 				</div>
+				</div>
+				<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
@@ -120,21 +113,23 @@
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Email Id</label>
-							<form:input id="emailId" path="emailId" tabindex="1"
+							<form:input id="emailId" path="emailId" tabindex="1" 
 							cssClass="form-control" placeholder="Email Id"
 							 maxlength="100"/>
 					</div>
 				</div>
+				</div>
+				<div class="row">
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Phone</label>
 							<form:input id="phone" path="phone" tabindex="1" class="form-control"
-							cssClass="form-control" placeholder="phone"
+							cssClass="form-control" placeholder="Phone"
 							 maxlength="30"/>
 					</div>
 				</div>
@@ -147,35 +142,15 @@
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="required">Adhar No</label>
+						<label class="required">Aadhar No</label>
 							<form:input id="pan" path="pan" tabindex="1"
-							cssClass="form-control" placeholder="Pan No"
+							cssClass="form-control" placeholder="Aadhar"
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Permanent Address</label>
-							<form:textarea id="paddress" path="paddress" tabindex="1" cols="3" rows="2"
-							cssClass="form-control" placeholder="Permanent Address"
-							 maxlength="100"/>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Current Address</label>
-							<form:textarea id="caddress" path="caddress" tabindex="1" cols="3" rows="2"
-							cssClass="form-control" placeholder="Current Address"
-							 maxlength="100"/>
-					</div>
-				</div>
-				
-				
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
@@ -196,6 +171,29 @@
 							</form:select>
 					</div>
 				</div>
+				</div>
+				<div class="row">
+				<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Permanent Address</label>
+							<form:textarea id="paddress" path="paddress" tabindex="1" cols="3" rows="2"
+							cssClass="form-control" placeholder="Permanent Address"
+							 maxlength="100"/>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Current Address</label>
+							<form:textarea id="caddress" path="caddress" tabindex="1" cols="3" rows="2"
+							cssClass="form-control" placeholder="Current Address"
+							 maxlength="100"/>
+					</div>
+				</div>
+				
+				
+				
 				
 			
 				</div>
@@ -244,15 +242,15 @@
 							<div class="form-group">
 								<label class="required">Phone</label>
 									<input type="text" id="emconphone" name="emconphone" class="form-control" tabindex="1"
-									class="form-control" placeholder="emconphone"
+									class="form-control" placeholder="Phone"
 									 maxlength="100"/>
 							</div>
 						</div>	
-					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">		
+					<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12">		
 							<div class="form-group">
 								<label>Contact Address</label>
-									<textarea id="emconaddress" name="emconaddress" tabindex="1" rows="2" cols="2"
-									class="form-control" placeholder="emconaddress"
+									<textarea id="emconaddress" name="emconaddress" tabindex="1" rows="1" cols="2"
+									class="form-control" placeholder="Address"
 									></textarea>
 							</div>
 						</div>	
@@ -275,10 +273,11 @@
 		</form:form>
 
 	</div>
-	<!-- </section></section></section> -->
+
 </body>
   <script>
 			$(document).ready(function() {
+				
 				var url	=	jQuery(location).attr('href');
 				var status = url.split("?status=")[1];
 				if(status!=undefined)
@@ -299,8 +298,59 @@
 				}
 				$("input").focus(function() {
 					 $(this).attr('placeholder', '');
+					 
 				});
+				
+				$(".dateOfBirth").datetimepicker({
+					format : 'd/m/Y',
+					changeMonth : true,
+					changeYear : true,
+					timepicker : false,
+					closeOnDateSelect : true,
+					scrollInput : false,
+					maxDate:'0',
+				});
+				
+				$(".dateOfJoining").datetimepicker({
+					format : 'd/m/Y',
+					changeMonth : true,
+					changeYear : true,
+					timepicker : false,
+					closeOnDateSelect : true,
+					scrollInput : false,
+					maxDate:0, 
+				});
+				
+				jQuery.validator.setDefaults({
+					  debug: true,
+					  success: "valid"
+					});
+					$( "#emp-form" ).validate({
+					  rules: {					
+						emrelation: {
+							required : true,
+							number : true,
+							maxlength : "4",
+							minlength : "4",
+						},
+						'emp.firstname': {
+							required : true,
+						},
+						
+					  },
+					  messages : {},
+						highlight : function(label) {
+							jQuery(label).closest('.form-group').addClass('error');
+							jQuery(label).closest('.form-group').removeClass('success');
+						},
+						success : function(label) {
+							label.addClass('valid').closest('.form-group').addClass('success');
+							jQuery(label).closest('.form-group').removeClass('error');
+						},
+					
+					});
 			});
+			
 
 </script>
 </html>

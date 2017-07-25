@@ -66,7 +66,7 @@
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 					<div class="form-group">
 						<label class="required">Date of Birth</label>
-							<form:input id="dob" path="dob" tabindex="1"
+							<form:input id="emp.dob" path="dob" tabindex="1"
 							cssClass="form-control dateOfBirth" placeholder="DOB"
 							 maxlength="100"/>
 					</div>
@@ -146,7 +146,7 @@
 
 					<div class="form-group">
 						<label class="required">Aadhar No</label>
-							<form:input id="pan" path="pan" tabindex="1"
+							<form:input id="aadhar" path="pan" tabindex="1"
 							cssClass="form-control" placeholder="Aadhar"
 							 maxlength="100"/>
 					</div>
@@ -328,12 +328,61 @@
 					$( "#emp-form" ).validate({
 					  rules: {					
 						emrelation: {
-							required : true,
-							number : true,
-							maxlength : "4",
-							minlength : "4",
+							required : true,							
 						},
 						'emp.firstname': {
+							required : true,
+						},
+						'emp.lastname': {
+							required : true,
+						},
+						'emp.sex': {
+							required : true,
+						},
+						'emp.dob': {
+							required : true,
+						},
+						'emp.doj': {
+							required : true,
+						},
+						
+						'emp.status': {
+							required : true,
+						},
+						'emp.emailId': {
+							required : true,
+						},
+						'phone': {
+							required : true,
+						},
+						'phone': {
+							required : true,
+						},
+						'pan': {
+							required : true,
+						},
+						'aadhar': {
+							required : true,
+						},
+						'emp.repotingto': {
+							required : true,
+						},
+						'emp.designation': {
+							required : true,
+						},
+						'paddress': {
+							required : true,
+						},
+						'caddress': {
+							required : true,
+						},
+						'emconname': {
+							required : true,
+						},
+						'emrelation': {
+							required : true,
+						},
+						'emconphone': {
 							required : true,
 						},
 						

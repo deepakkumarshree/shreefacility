@@ -38,7 +38,8 @@ public class LoginController {
 	    System.out.println("Controller :LoginController Method :showLogin");
 	    boolean status = loginService.isValidUser(emp, request);
 	    if(!status) modelandview = new ModelAndView("redirect:login", "status",status);
-	    
+	    userBean = (UserBean)request.getSession().getAttribute("user");
+	    modelandview.addObject("userBean", userBean);
 	    return modelandview;
 	  }
 	 @RequestMapping("/dashboard")
@@ -81,6 +82,15 @@ public class LoginController {
 	    	 status = loginService.changePassword(oldPass, newPass, userBean.getEmpCode());
 	    }
 	    modelandview = new ModelAndView("redirect:login", "status",status);
+	    return modelandview;
+	  }
+	 @RequestMapping("/logout")
+	  public ModelAndView logout(HttpServletRequest request)throws Exception
+	  {
+	    ModelAndView modelandview = null;
+	    request.getSession().removeAttribute("user");
+
+	    modelandview = new ModelAndView("redirect:login", "status",0);
 	    return modelandview;
 	  }
 	 

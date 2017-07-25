@@ -66,7 +66,7 @@
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 					<div class="form-group">
 						<label class="required">Date of Birth</label>
-							<form:input id="emp.dob" path="dob" tabindex="1"
+							<form:input id="dob" path="dob" tabindex="1"
 							cssClass="form-control dateOfBirth" placeholder="DOB"
 							 maxlength="100"/>
 					</div>
@@ -339,7 +339,7 @@
 						'emp.sex': {
 							required : true,
 						},
-						'emp.dob': {
+						'dob': {
 							required : true,
 						},
 						'emp.doj': {
@@ -349,10 +349,7 @@
 						'emp.status': {
 							required : true,
 						},
-						'emp.emailId': {
-							required : true,
-						},
-						'phone': {
+						'emailId': {
 							required : true,
 						},
 						'phone': {

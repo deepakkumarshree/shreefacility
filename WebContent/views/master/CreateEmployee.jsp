@@ -197,7 +197,25 @@
 				
 			
 				</div>
-	
+			<%-- 	<div class="row">
+				
+				
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Status</label>
+							<form:select id="emp.status" path="emp.status" tabindex="1"
+							cssClass="form-control"
+							 maxlength="100">
+							 <form:option value="Active">active</form:option>
+							  <form:option value="Inactive">inactive</form:option>
+							  </form:select>
+					</div>
+				</div>
+			
+				
+				
+				</div> --%>	
 			<div class="row">
 				<div class="col-lg-12 col-md-4 col-sm-4 col-xs-12">		
 					<h4 class="widgettitle">Emergency Contact Detail</h4>

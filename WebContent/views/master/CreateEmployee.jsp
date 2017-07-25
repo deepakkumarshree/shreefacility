@@ -19,7 +19,7 @@
 			</div>
 		</div>
 
-		<form:form role="form" id="leavetype-form" name="leavetype-form" method="POST" action="saveEmployee" commandName="empBean">
+		<form:form role="form" id="emp-form" name="emp-form" method="POST" action="saveEmployee" commandName="empBean">
 
 
 				<div class="row">
@@ -117,7 +117,7 @@
 
 					<div class="form-group">
 						<label class="required">Email Id</label>
-							<form:input id="emailId" path="emailId" tabindex="1"
+							<form:input id="emailId" path="emailId" tabindex="1" 
 							cssClass="form-control" placeholder="Email Id"
 							 maxlength="100"/>
 					</div>
@@ -320,7 +320,37 @@
 					scrollInput : false,
 					maxDate:0, 
 				});
+				
+				jQuery.validator.setDefaults({
+					  debug: true,
+					  success: "valid"
+					});
+					$( "#emp-form" ).validate({
+					  rules: {					
+						emrelation: {
+							required : true,
+							number : true,
+							maxlength : "4",
+							minlength : "4",
+						},
+						'emp.firstname': {
+							required : true,
+						},
+						
+					  },
+					  messages : {},
+						highlight : function(label) {
+							jQuery(label).closest('.form-group').addClass('error');
+							jQuery(label).closest('.form-group').removeClass('success');
+						},
+						success : function(label) {
+							label.addClass('valid').closest('.form-group').addClass('success');
+							jQuery(label).closest('.form-group').removeClass('error');
+						},
+					
+					});
 			});
+			
 
 </script>
 </html>

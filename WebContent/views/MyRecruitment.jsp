@@ -21,7 +21,7 @@
                       	    
                   </div>
                   <div class="tab-content">
-						<div class=" backdiv tab-pane fade in active" id="addemp">
+						<div class="  tab-pane fade in active" id="addemp">
 		                  <jsp:include page="/showEmployee" ></jsp:include>
 		              </div>
 		             
@@ -29,7 +29,7 @@
 			                  
 			             
 		              </div>
-		            </div>
+		          </div>
 			</div>
           </section></section>
       </section>

@@ -89,7 +89,6 @@ public class LoginController {
 	  {
 	    ModelAndView modelandview = null;
 	    request.getSession().removeAttribute("user");
-
 	    modelandview = new ModelAndView("redirect:login", "status",0);
 	    return modelandview;
 	  }

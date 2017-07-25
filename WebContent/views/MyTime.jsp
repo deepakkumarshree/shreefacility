@@ -20,6 +20,15 @@
                       	</div>
                       	    
                   </div>
+                   <div class="tab-content">
+						<div class=" backdiv tab-pane fade in active" id="attendance">
+		                 <%--  <jsp:include page="/showEmployee" ></jsp:include> --%>
+		              </div>
+		             
+		               <div class="tab-pane backdiv" id="leave">	
+		               	<jsp:include page="/addLeave" ></jsp:include>		
+		              </div>
+		          </div>
               </div>
           </section></section>
       </section>

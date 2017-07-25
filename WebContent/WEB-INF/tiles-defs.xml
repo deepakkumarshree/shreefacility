@@ -42,11 +42,9 @@
 				<put-attribute name="title" value="Change Password" />
 				<put-attribute name="body" value="/views/ChangePassword.jsp" />
 			</definition>
-			
-			<definition name="leavetype" template="/views/master/LeaveType.jsp">
+			<definition name="leavetype" template="/views/master/LeaveType.jsp">				
 			</definition>
-			<!-- <definition name="addemp" template="/views/master/CreateEmployee.jsp">
-			</definition> -->
+			
 			<definition name="addemp" template="/views/master/CreateEmployee.jsp">				
 			</definition>
 			<definition name="allemp" template="/views/master/EmpList.jsp">				

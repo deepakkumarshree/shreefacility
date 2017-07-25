@@ -27,11 +27,11 @@ a, a:hover, a:focus {
 ::selection {
 
     background: #68dff0;
-    color: #fff;
+    color: #000000;
 }
 ::-moz-selection {
     background: #68dff0;
-    color: #fff;
+    color: #000000;
 }
 
 #container {

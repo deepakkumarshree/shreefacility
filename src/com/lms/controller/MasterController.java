@@ -15,7 +15,7 @@ import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
 import com.lms.model.LeaveType;
 import com.lms.service.EmployeeService;
-import com.lms.service.LeaveTypeService;
+
 
 
 @Controller
@@ -59,7 +59,7 @@ public class MasterController {
 		userBean = (UserBean)request.getSession().getAttribute("user");
 	    if(userBean!=null)
 	    {
-	    	modelAndView = new ModelAndView("myrecruitment","leavetypebean",new LeaveType());
+	    	modelAndView = new ModelAndView("myrecruitment","leavetypebean",new EmployeeDetails());
 	    }
 	    else  modelAndView = new ModelAndView("redirect:login", "status",-1);
 	    

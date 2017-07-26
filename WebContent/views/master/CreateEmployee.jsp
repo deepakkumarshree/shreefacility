@@ -7,7 +7,7 @@
 	<div class="container-fluid">
 		<h4 class="widgettitle">Create Employee</h4>
 		
-		<div class="col-lg-12 hide" id="infobardiv">
+	 <div class="col-lg-12 hide" id="infobardiv">
 			<div class="alert alert-info" id="infobar">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 			</div>
@@ -18,11 +18,20 @@
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 			</div>
 		</div>
-
+ 
 		<form:form role="form" id="emp-form" name="emp-form" method="POST" action="saveEmployee" commandName="empBean">
 
 
 				<div class="row">
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Emp Code</label>
+							<form:input id="empcode" path="emp.empcode" tabindex="1"
+							cssClass="form-control" placeholder="EmpCode"
+							 maxlength="100"/>
+					</div>
+				</div>
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
@@ -64,26 +73,6 @@
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-					<div class="form-group">
-						<label class="required">Date of Birth</label>
-							<form:input id="dob" path="dob" tabindex="1" readonly="true"
-							cssClass="form-control dateOfBirth" placeholder="DOB"
-							 maxlength="100"/>
-					</div>
-				</div>
-				
-				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
-
-					<div class="form-group">
-						<label class="required">Date of Join</label>
-							<form:input id="doj" path="emp.doj" tabindex="1" readonly="true"
-							cssClass="form-control dateOfJoining" placeholder="DOJ"
-							 maxlength="100"/>
-					</div>
-				</div>
-				</div>
-				<div class="row">
-				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Marital Status</label>
@@ -95,7 +84,31 @@
 							  </form:select>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				
+				</div>
+				<div class="row">				
+				
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+					<div class="form-group">
+						<label class="required">Date of Birth</label>
+							<form:input id="dob" path="dob" tabindex="1" readonly="true"
+							cssClass="form-control dateOfBirth" placeholder="DOB" style="cursor:pointer;"
+							 maxlength="100"/>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+
+					<div class="form-group">
+						<label class="required">Date of Join</label>
+							<form:input id="doj" path="emp.doj" tabindex="1" readonly="true"  
+							cssClass="form-control dateOfJoining" placeholder="DOJ"  style="cursor:pointer;"
+							 maxlength="100"/>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">		
+				
 
 					<div class="form-group">
 						<label class="optional">Father Name</label>
@@ -104,17 +117,16 @@
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="optional">Spouse Name/Husband Name</label>
+						<label class="optional">Spouse/Husband Name</label>
 							<form:input id="spousename" path="spousename" tabindex="1"
 							cssClass="form-control" placeholder="Husband Name"
 							 maxlength="100"/>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 					<div class="form-group">
 						<label class="required">Email Id</label>
 							<form:input id="emailId" path="emailId" tabindex="1" 
@@ -130,7 +142,7 @@
 						<label class="required">Phone</label>
 							<form:input id="phone" path="phone" tabindex="1" class="form-control"
 							cssClass="form-control" placeholder="Phone"
-							 maxlength="30"/>
+							 maxlength="10"/>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
@@ -139,16 +151,16 @@
 						<label class="required">Pan No</label>
 							<form:input id="pan" path="pan" tabindex="1"
 							cssClass="form-control" placeholder="Pan No"
-							 maxlength="100"/>
+							 maxlength="10"/>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Aadhar No</label>
-							<form:input id="aadhar" path="pan" tabindex="1"
+							<form:input id="aadhar" path="emp.aadhar" tabindex="1"
 							cssClass="form-control" placeholder="Aadhar"
-							 maxlength="100"/>
+							 maxlength="16"/>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
@@ -156,18 +168,16 @@
 					<div class="form-group">
 						<label class="required">Reporting To</label>							
 							 <form:select id="emp.repotingto" path="emp.repotingto" tabindex="1" cssClass="form-control">
-							 	<form:option value="Rakesh">Rakesh</form:option>
-							 	<form:option value="Manoj">Manoj</form:option>							 	
+							 	<form:options items="${managerList}" />						 							 	
 							</form:select>
 					</div>
 				</div>
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
-						<label class="required">Designation</label>						
-							  <form:select id="emp.designation" path="emp.designation" tabindex="1" cssClass="form-control">
-							 	<form:option value="Admin">Admin</form:option>
-							 	<form:option value="Employee">Employee</form:option>							 	
+						<label class="required">Role</label>						
+							  <form:select id="emp.role.roleId" path="emp.role.roleId" tabindex="1" cssClass="form-control">
+							 <form:options items="${roleList}" />		
 							</form:select>
 					</div>
 				</div>
@@ -225,7 +235,7 @@
 								<label class="required">Phone</label>
 									<input type="text" id="emconphone" name="emconphone" class="form-control" tabindex="1"
 									class="form-control" placeholder="Phone"
-									 maxlength="100"/>
+									 maxlength="10"/>
 							</div>
 						</div>	
 					<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12">		
@@ -260,7 +270,7 @@
   <script>
 			$(document).ready(function() {
 				
-				var url	=	jQuery(location).attr('href');
+			/* 	var url	=	jQuery(location).attr('href');
 				var status = url.split("?status=")[1];
 				if(status!=undefined)
 				{
@@ -277,7 +287,7 @@
 						$("#errorbar").text("");
 						$("#errorbardiv").removeClass("show").addClass("hide");
 					});
-				}
+				} */
 				$("input").focus(function() {
 					 $(this).attr('placeholder', '');
 					 
@@ -300,7 +310,7 @@
 				   $("#fathername,#firstname,#middlename,#lastname,#spousename,#paddress,#caddress,#emconname,#emrelation,#emconaddress").Setcase({
 					   caseValue : 'pascal'
 					});
-				   $("#panno").Setcase({
+				   $("#pan,#empcode").Setcase({
 						caseValue : 'upper'
 					});
 					$( "#emp-form" ).validate({
@@ -329,6 +339,7 @@
 						},
 						'emailId': {
 							required : true,
+							email:true,
 						},
 						'phone': {
 							required : true,
@@ -336,7 +347,7 @@
 						'pan': {
 							required : true,
 						},
-						'aadhar': {
+						'emp.aadhar': {
 							required : true,
 						},
 						'emp.repotingto': {
@@ -353,10 +364,7 @@
 						},
 						'emconname': {
 							required : true,
-						},
-						'emrelation': {
-							required : true,
-						},
+						},						
 						'emconphone': {
 							required : true,
 						},
@@ -373,6 +381,14 @@
 						},  */ 
 					
 					});
+					
+					$("#emconphone,#phone,#aadhar").keyup(function(e){
+						if (/\D/g.test(this.value))
+						{
+						// Filter non-digits from input value.
+						this.value = this.value.replace(/\D/g, '');
+						}
+				});
 			});
 			
 

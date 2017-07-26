@@ -5,7 +5,7 @@
   <section id="container" >    
       <section id="main-content">
           <section class="wrapper">
-          <div class="col-lg-12 hide" id="infobardiv">
+          <!-- <div class="col-lg-12 hide" id="infobardiv">
 			<div class="alert alert-info" id="infobar">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 			</div>
@@ -15,7 +15,7 @@
 			<div class="alert-error alert-error-info" id="errorbar">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 			</div>
-		</div>
+		</div> -->
             
                   <div class="col-lg-12 main-chart">
         

@@ -36,8 +36,11 @@
 	<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="resources/bootstrap/css/jquery-ui.css">
 	<link rel="stylesheet" href="resources/assets/bootstrap/css/jqwidgets/jqx.base.css" type="text/css" />
-  	<link rel="stylesheet" href="resources/assets/plugins/datatables/dataTables.bootstrap.css">   
-  	<link rel="stylesheet" href="resources/bootstrap/css/jquery.datetimepicker.css"> 	
+  	<link rel="stylesheet" href="resources/plugins/datatables/dataTables.bootstrap.css">   
+  	<link rel="stylesheet" href="resources/bootstrap/css/jquery.datetimepicker.css"> 
+  	<link rel="stylesheet" href="resources/plugins/iCheck/flat/blue.css">
+	<link rel="stylesheet" href="resources/bootstrap/css/colorbox/colorbox.css" type="text/css" />	
+		
     
     <!-- JS -->
  	<script src="resources/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -54,6 +57,12 @@
     <script src="resources/assets/js/common-scripts.js"></script>    
     <script type="text/javascript" src="resources/assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="resources/assets/js/gritter-conf.js"></script>
+    <script type="text/javascript" src="resources/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="resources/plugins/jQuery/canvasjs.min.js"></script>
+    <script type="text/javascript" src="resources/plugins/jQuery/Chart.min.js"></script>
+    <script type="text/javascript" src="resources/plugins/jQuery/jquery.sparkline.min.js"></script>
+    
   </head>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">

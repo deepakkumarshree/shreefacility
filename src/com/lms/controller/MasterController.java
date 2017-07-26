@@ -1,5 +1,7 @@
 package com.lms.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
 import com.lms.model.LeaveType;
 import com.lms.service.EmployeeService;
+import com.lms.service.MasterService;
 
 
 
@@ -23,6 +26,8 @@ public class MasterController {
 	
 	@Autowired
 	private EmployeeService employeeService;	
+	@Autowired
+	private MasterService masterService;	
 	private UserBean userBean;
 	
 	@RequestMapping("/showEmployee")
@@ -33,7 +38,9 @@ public class MasterController {
 	   userBean = (UserBean)request.getSession().getAttribute("user");
 	    if(userBean!=null)
 	    {
-	    	modelAndView = new ModelAndView("addemp","empBean",new EmployeeDetails());	
+	    	modelAndView = new ModelAndView("addemp","empBean",new EmployeeDetails());   	
+	       	modelAndView.addObject("roleList", masterService.getRoles());
+	    	modelAndView.addObject("managerList", masterService.getManagers());
 	    }
 	    else  modelAndView = new ModelAndView("redirect:login", "status",-1);
 	   

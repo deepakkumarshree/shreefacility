@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.lms.model.LeaveRequest;
+//import com.lms.model.LeaveRequest;
 import com.lms.model.LeaveType;
-import com.lms.service.LeaveRequestService;
+//import com.lms.service.LeaveRequestService;
 
 @Controller
 public class LeaveController {
 	
 	
-	@Autowired
+	/*@Autowired
 	private LeaveRequestService leaveTypeService;
 	
 	@InitBinder
@@ -53,20 +53,20 @@ public class LeaveController {
 		boolean status = leaveTypeService.save(leaveType, request);
 		return new ModelAndView("redirect:mytime", "status",status);
 		
-	}
+	}*/
 	@RequestMapping("/mytime")
 	public ModelAndView myTime() throws Exception{
 		ModelAndView modelAndView = null;
-		modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());		
+		//modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());		
 		return modelAndView;
 		}
-	
+/*	
 	@RequestMapping(value="/viewLeave")
 	public ModelAndView viewLeaveRequest(HttpServletRequest request, @ModelAttribute("viewLeaveBean") LeaveRequest leaveRequest){
 		
 		
 		return null;
 		
-	}
+	}*/
 
 }

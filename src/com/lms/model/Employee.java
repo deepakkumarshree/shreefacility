@@ -52,6 +52,8 @@ public class Employee implements Serializable  {
 	  private String designation;
 	@Column(name="empcode")
 	  private String empcode;
+	@Column(name="aadhar")
+	  private String aadhar;
 	  @OneToOne(mappedBy = "emp", cascade = CascadeType.ALL)
 	private EmployeeDetails employeedetails;	
 	
@@ -128,6 +130,12 @@ public class Employee implements Serializable  {
 	}
 	public void setEmpcode(String empcode) {
 		this.empcode = empcode;
+	}
+	public String getAadhar() {
+		return aadhar;
+	}
+	public void setAadhar(String aadhar) {
+		this.aadhar = aadhar;
 	}
 	
 	

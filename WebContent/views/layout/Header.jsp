@@ -1,5 +1,4 @@
-<header class="main-header">
-	 <header class="header black-bg">
+	 <header class=" main-header header black-bg">
               <div class="sidebar-toggle-box">
                 
               </div>
@@ -21,30 +20,7 @@
             </div>
         </header>
 
-</header>
 
-<!-- <body onpageshow="if(event.persisted)" onUnload=""></body> -->
 
-<script type="text/javascript">
-	$(document).ready(function() 
-	{
-		var delay = 300000;
-		setInterval(function() {
-			$("#ringbell").effect("shake");
-			checkNewTasks();
-		}, delay);
-	});
-	 
-	function checkNewTasks()
-	{
-		jQuery.ajax({
-			type : "GET",
-			url : 'checkNewTasks.htm',
-			success : function(data) {
-				$("#maillist").html(data);
-			}
-		});
-	}
-</script>
 
 

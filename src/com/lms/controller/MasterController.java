@@ -48,7 +48,7 @@ public class MasterController {
 	 	userBean = (UserBean)request.getSession().getAttribute("user");
 	    if(userBean!=null)
 	    {
-	    	return new ModelAndView("redirect:showEmployee", "status",status);
+	    	return new ModelAndView("redirect:myrecruitment", "status",status);
 	    }
 	    return new ModelAndView("redirect:login", "status",-1);
 		

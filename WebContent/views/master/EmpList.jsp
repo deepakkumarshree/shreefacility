@@ -77,7 +77,7 @@
 	</div>
 
 <script>
-  $(function () {
+ /*  $(function () {
     $('#debUpdate').DataTable({
       "paging": true,
       "lengthChange": false,
@@ -86,7 +86,7 @@
       "info": true,
       "autoWidth": true
     });
-  });
+  }); */
 </script>	
 	
 </body>

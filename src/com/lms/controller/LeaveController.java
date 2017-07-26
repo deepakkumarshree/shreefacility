@@ -51,7 +51,7 @@ public class LeaveController {
 		System.out.println("Controller : MasterController Method :saveLeaveType");	
 		System.out.println(request.getParameter("status"));
 		boolean status = leaveTypeService.save(leaveType, request);
-		return new ModelAndView("redirect:addLeave", "status",status);
+		return new ModelAndView("redirect:mytime", "status",status);
 		
 	}
 	@RequestMapping("/mytime")

@@ -27,7 +27,7 @@
 
 					<div class="form-group">
 						<label class="required">First Name</label>
-							<form:input id="emp.firstname" path="emp.firstname" tabindex="1"
+							<form:input id="firstname" path="emp.firstname" tabindex="1"
 							cssClass="form-control" placeholder="First Name"
 							 maxlength="100"/>
 					</div>
@@ -37,7 +37,7 @@
 
 					<div class="form-group">
 						<label class="optional">Middle Name</label>
-							<form:input id="emp.middlename" path="emp.middlename" tabindex="1"
+							<form:input id="middlename" path="emp.middlename" tabindex="1"
 							cssClass="form-control" placeholder="Middle Name"
 							 maxlength="30"/>
 					</div>
@@ -46,7 +46,7 @@
 
 					<div class="form-group">
 						<label class="required">Last Name</label>
-							<form:input id="emp.lastname" path="emp.lastname" tabindex="1"
+							<form:input id="lastname" path="emp.lastname" tabindex="1"
 							cssClass="form-control" placeholder="Last Name"
 							 maxlength="100"/>
 					</div>
@@ -55,7 +55,7 @@
 
 					<div class="form-group">
 						<label class="required">Sex</label>
-							<form:select id="emp.sex" path="emp.sex" tabindex="1"
+							<form:select id="sex" path="emp.sex" tabindex="1"
 							cssClass="form-control" 
 							 maxlength="30">
 							 <form:option value="Male">Male</form:option>
@@ -66,7 +66,7 @@
 				<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
 					<div class="form-group">
 						<label class="required">Date of Birth</label>
-							<form:input id="dob" path="dob" tabindex="1"
+							<form:input id="dob" path="dob" tabindex="1" readonly="true"
 							cssClass="form-control dateOfBirth" placeholder="DOB"
 							 maxlength="100"/>
 					</div>
@@ -76,7 +76,7 @@
 
 					<div class="form-group">
 						<label class="required">Date of Join</label>
-							<form:input id="emp.doj" path="emp.doj" tabindex="1"
+							<form:input id="doj" path="emp.doj" tabindex="1" readonly="true"
 							cssClass="form-control dateOfJoining" placeholder="DOJ"
 							 maxlength="100"/>
 					</div>
@@ -283,30 +283,26 @@
 					 
 				});
 				
-				$(".dateOfBirth").datetimepicker({
-					format : 'd/m/Y',
-					changeMonth : true,
-					changeYear : true,
-					timepicker : false,
-					closeOnDateSelect : true,
-					scrollInput : false,
-					maxDate:'0',
-				});
+				 $("#dob").datepicker({
+					    dateFormat: "dd-mm-yy",
+					    changeMonth: true,
+					    changeYear: true,
+					    
+					});
+				  
+				   $("#doj").datepicker({
+					    dateFormat: "dd-mm-yy",
+					    changeMonth: true,
+					    changeYear: true,
+					   
+					}); 
 				
-				$(".dateOfJoining").datetimepicker({
-					format : 'd/m/Y',
-					changeMonth : true,
-					changeYear : true,
-					timepicker : false,
-					closeOnDateSelect : true,
-					scrollInput : false,
-					maxDate:0, 
-				});
-				
-			/* 	jQuery.validator.setDefaults({
-					  debug: true,
-					  success: "valid"
-					}); */
+				   $("#fathername,#firstname,#middlename,#lastname,#spousename,#paddress,#caddress,#emconname,#emrelation,#emconaddress").Setcase({
+					   caseValue : 'pascal'
+					});
+				   $("#panno").Setcase({
+						caseValue : 'upper'
+					});
 					$( "#emp-form" ).validate({
 					  rules: {					
 						emrelation: {
@@ -371,10 +367,10 @@
 							jQuery(label).closest('.form-group').addClass('error');
 							jQuery(label).closest('.form-group').removeClass('success');
 						},
-						success : function(label) {
+						/*  success : function(label) {
 							label.addClass('valid').closest('.form-group').addClass('success');
 							jQuery(label).closest('.form-group').removeClass('error');
-						},
+						},  */ 
 					
 					});
 			});

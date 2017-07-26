@@ -5,6 +5,17 @@
   <section id="container" >    
       <section id="main-content">
           <section class="wrapper">
+          <div class="col-lg-12 hide" id="infobardiv">
+			<div class="alert alert-info" id="infobar">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+		</div>
+
+		<div class="col-lg-12 hide" id="errorbardiv">
+			<div class="alert-error alert-error-info" id="errorbar">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+		</div>
             
                   <div class="col-lg-12 main-chart">
         
@@ -20,8 +31,8 @@
                       	</div>
                       	    
                   </div>
-                  <div class="tab-content">
-						<div class=" backdiv tab-pane fade in active" id="addemp">
+                  <div class="tab-content" style="width: 100%;height: 100%;">
+						<div class=" tab-pane fade in active" id="addemp">
 		                  <jsp:include page="/showEmployee" ></jsp:include>
 		              </div>
 		             
@@ -33,4 +44,29 @@
           </section></section>
       </section>
   </body>
+  <script type="text/javascript">
+  $(document).ready(function() {
+		
+		var url	=	jQuery(location).attr('href');
+		var status = url.split("?status=")[1];
+		if(status!=undefined)
+		{
+			if (status == 'false') {
+				$('#errorbar').append("Unable to Save Data.");
+				$("#errorbardiv").removeClass("hide").addClass("show");
+			} else {
+				$('#infobar').append("Data Saved Successfully.");
+				$("#infobardiv").removeClass("hide").addClass("show");
+			}
+			$("input").keyup(function() {
+				$("#infobar").text("");
+				$("#infobardiv").removeClass("show").addClass("hide");
+				$("#errorbar").text("");
+				$("#errorbardiv").removeClass("show").addClass("hide");
+			});
+		}
+		
+			 
+		});
+  </script>
 </html>

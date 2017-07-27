@@ -48,7 +48,7 @@ public class LeaveController {
 			ArrayList<String> hList=leaveTypeService.getHolyday();
 			modelAndView.addObject("hlist",hList);	
 	    }
-	    else modelAndView = new ModelAndView("redirect:login", "status",false);	 
+	    else modelAndView = new ModelAndView("redirect:login", "status",-1);	 
 	    
 		return modelAndView;
 		}
@@ -64,7 +64,7 @@ public class LeaveController {
 	    	boolean status = leaveTypeService.save(leaveType, request);
 	    	modelAndView= new ModelAndView("redirect:mytime", "status",status);
 	    }
-	    else modelAndView = new ModelAndView("redirect:login", "status",false);	 
+	    else modelAndView = new ModelAndView("redirect:login", "status",-1);	 
 	    
 	    return modelAndView;
 	}
@@ -78,7 +78,7 @@ public class LeaveController {
 	    	modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());	
 	    
 	    }
-		else modelAndView = new ModelAndView("redirect:login", "status",false);	    
+		else modelAndView = new ModelAndView("redirect:login", "status",-1);	    
 		return modelAndView;
 		}
 	

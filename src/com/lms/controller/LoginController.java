@@ -54,7 +54,7 @@ public class LoginController {
 	    	modelandview = new ModelAndView("home");
 	    	System.out.println("Controller :LoginController Method :home"); 
 	    }
-	    else modelandview = new ModelAndView("redirect:login", "status",false);
+	    else modelandview = new ModelAndView("redirect:login", "status",-1);
 	    return modelandview;
 	  }
 	 @RequestMapping("/changepassword")

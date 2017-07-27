@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lms.dao.EmployeeDao;
-import com.lms.dao.LeaveTypeDao;
+
 import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
 import com.lms.service.EmployeeService;

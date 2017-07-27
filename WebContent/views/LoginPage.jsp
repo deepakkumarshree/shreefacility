@@ -69,7 +69,9 @@
 	  	</div>
 	  </div>
     <script src="resources/assets/js/jquery.js"></script>
+    <script src="resources/assets/js/jquery.validate.js"></script>
     <script src="resources/assets/js/bootstrap.min.js"></script>
+
 	 </body>
   <script>
 			$(document).ready(function() {
@@ -81,7 +83,41 @@
 					{
 						alert('Invalid User !!!');
 					}
+					$("input").keyup(function() {
+						$("#infobar").text("");
+						$("#infobardiv").removeClass("show").addClass("hide");
+						$("#errorbar").text("");
+						$("#errorbardiv").removeClass("show").addClass("hide");
+					});
 				}
+				$("input").focus(function() {
+					 $(this).attr('placeholder', '');
+					 
+				});
+				
+				$( "#login-form" ).validate({
+					  rules: {					
+
+						'empcode': {
+							required : true,
+						},
+						'password': {
+							required : true,
+						},
+
+						
+					  },
+					  messages : {},
+						highlight : function(label) {
+							jQuery(label).closest('.form-group').addClass('error');
+							jQuery(label).closest('.form-group').removeClass('success');
+						},
+						success : function(label) {
+							label.addClass('valid').closest('.form-group').addClass('success');
+							jQuery(label).closest('.form-group').removeClass('error');
+						},
+					
+					});
 				
 			});
 

@@ -59,7 +59,7 @@
 					<div class="form-group">
 						<label class="required">To Date</label>
 							<form:input id="todate" path="toDate" tabindex="1"
-							cssClass="form-control" placeholder="dd-mm-yyyy" autocomplete="off" 
+							cssClass="form-control" placeholder="dd-mm-yyyy" autocomplete="off"  readonly="true"
 							 />
 					</div>
 				</div>

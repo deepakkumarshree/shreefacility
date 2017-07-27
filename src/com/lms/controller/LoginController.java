@@ -54,6 +54,7 @@ public class LoginController {
 	    	modelandview = new ModelAndView("home");
 	    	System.out.println("Controller :LoginController Method :home"); 
 	    }
+	    else modelandview = new ModelAndView("redirect:login", "status",false);
 	    return modelandview;
 	  }
 	 @RequestMapping("/changepassword")
@@ -82,6 +83,7 @@ public class LoginController {
 	    	System.out.println("Controller :LoginController Method :changepassword");
 	    	 status = loginService.changePassword(oldPass, newPass, userBean.getEmpCode());
 	    }
+	    else modelandview = new ModelAndView("redirect:login", "status",false); 
 	    modelandview = new ModelAndView("redirect:login", "status",status);
 	    return modelandview;
 	  }

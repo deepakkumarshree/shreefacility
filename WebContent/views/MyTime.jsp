@@ -11,7 +11,7 @@
                                         				
 					<div class="row">
 						 
-                      	<div class="col-md-9 col-sm-9 mb">
+                      	<div class="col-md-9 col-sm-9">
                       		<ul class="nav nav-tabs" id="myTab">
 								<!-- <li class="active"><a href="#attendance" data-toggle="tab">Attendance</a></li> -->
 								<li><a href="#leave" data-toggle="tab">Leave</a></li>

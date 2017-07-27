@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lms.bean.UserBean;
 import com.lms.model.LeaveRequest;
 import com.lms.model.LeaveType;
 import com.lms.service.LeaveRequestService;
@@ -37,12 +38,18 @@ public class LeaveController {
 		}
 		
 	@RequestMapping("/addLeave")
-	public ModelAndView showLeaveType() throws Exception{
+	public ModelAndView showLeaveType(HttpServletRequest request) throws Exception{
 		ModelAndView modelAndView = null;
-		modelAndView = new ModelAndView("leavetype","leavetypebean",new LeaveRequest());
-		modelAndView.addObject("leaveTypeInfo", LeaveType.values());		
-		ArrayList<String> hList=leaveTypeService.getHolyday();
-		modelAndView.addObject("hlist",hList);	
+		UserBean userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+			modelAndView = new ModelAndView("leavetype","leavetypebean",new LeaveRequest());
+			modelAndView.addObject("leaveTypeInfo", LeaveType.values());		
+			ArrayList<String> hList=leaveTypeService.getHolyday();
+			modelAndView.addObject("hlist",hList);	
+	    }
+	    else modelAndView = new ModelAndView("redirect:login", "status",false);	 
+	    
 		return modelAndView;
 		}
 	
@@ -50,14 +57,28 @@ public class LeaveController {
 	public ModelAndView saveLeaveType(HttpServletRequest request,@ModelAttribute("leavetypebean") LeaveRequest leaveType)throws Exception{
 		System.out.println("Controller : MasterController Method :saveLeaveType");	
 		System.out.println(request.getParameter("status"));
-		boolean status = leaveTypeService.save(leaveType, request);
-		return new ModelAndView("redirect:mytime", "status",status);
-		
+		ModelAndView modelAndView = null;
+		UserBean userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	boolean status = leaveTypeService.save(leaveType, request);
+	    	modelAndView= new ModelAndView("redirect:mytime", "status",status);
+	    }
+	    else modelAndView = new ModelAndView("redirect:login", "status",false);	 
+	    
+	    return modelAndView;
 	}
 	@RequestMapping("/mytime")
-	public ModelAndView myTime() throws Exception{
+	public ModelAndView myTime(HttpServletRequest request) throws Exception{
 		ModelAndView modelAndView = null;
-		modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());		
+		
+		UserBean userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());	
+	    
+	    }
+		else modelAndView = new ModelAndView("redirect:login", "status",false);	    
 		return modelAndView;
 		}
 	

@@ -2,6 +2,7 @@ package com.lms.serviceImp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lms.bean.UserBean;
 import com.lms.dao.LeaveRequestDao;
 import com.lms.model.LeaveRequest;
 import com.lms.service.LeaveRequestService;
@@ -46,6 +48,10 @@ public class LeaveRequestServiceImpl implements LeaveRequestService{
 	public ArrayList<String> getHolyday() {			
 		return leaveTypeDao.getHolyday();
 	}
-
+	@Override
+	public Map<String,String> getLeaveBalance(UserBean userBean) {			
+		return leaveTypeDao.getLeaveBalance(userBean);
+	}
+	
 
 }

@@ -22,34 +22,25 @@ $(document).ready(function() {
 	$("#leaveform" ).validate({
 		  rules: {					
 			  fromDate: {
-				required : true,
-				minlength : 4,
-			},
-			'leaveType.leaveTypeId': {
-				required : true,
+				required : true,				
 			},
 			'toDate': {
 				required : true,
 			},
-			'toDate': {
-				required : true,
-			},
+			
 		  },
 		  messages : {},
 			highlight : function(label) {
 				jQuery(label).closest('.form-group').addClass('error');
 				jQuery(label).closest('.form-group').removeClass('success');
 			},
-			  success : function(label) {
-				label.addClass('valid').closest('.form-group').addClass('success');
-				jQuery(label).closest('.form-group').removeClass('error');
-			},  
+			 
 		
 		});
 
-	$("#save").click(function() {alert(0);
+	$("#save").click(function() {
 		$("#status").val("SAVED");
-		$('#leaveform').valid();alert(1);
+		
 		
 		
 	});

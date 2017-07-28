@@ -80,6 +80,8 @@ public class LeaveController {
 	    {
 	    	modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());	
 	    	modelAndView.addObject("leaveTypeInfo", masterService.getLeaveType());
+	    	modelAndView.addObject("leaveBalInfo", leaveTypeService.getLeaveBalance(userBean));
+	    	modelAndView.addObject("leaveReqList", leaveTypeService.getAll());
 	    	ArrayList<String> hList=leaveTypeService.getHolyday();
 			modelAndView.addObject("hlist",hList);	
 	    

@@ -1,7 +1,9 @@
 package com.lms.daoImp;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.lms.bean.UserBean;
 import com.lms.dao.LeaveRequestDao;
 import com.lms.model.LeaveRequest;
 @Repository
@@ -43,7 +46,7 @@ public class LeaveRequestDaoImpl implements LeaveRequestDao{
 	@Override
 	@Transactional
 	public ArrayList<String> getHolyday() {
-		int i;
+	
 		ArrayList<String> holydayList=new ArrayList<String>();
 		
 		try{
@@ -64,7 +67,17 @@ public class LeaveRequestDaoImpl implements LeaveRequestDao{
 		}
 		return holydayList;
 	}
-
+	public Map<String,String> getLeaveBalance(UserBean userBean) 
+	{
+		Map<String,String> leaveBalMap=new HashMap<String,String>();
+		leaveBalMap.put("Casual Leave","12");
+		leaveBalMap.put("Paid Leave","12");
+		leaveBalMap.put("Optional Leave","2");
+		
+		
+		
+		return leaveBalMap;
+	}
 	
 
 }

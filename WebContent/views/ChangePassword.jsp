@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="js/changepassword.js" /></script>
+	<script src="resources/js/changepassword.js" /></script>
 </head>
 
 <body>
@@ -53,4 +53,37 @@
 	
 </body>
 
+<<<<<<< HEAD
+=======
+						'password': {
+							required : true,
+						},
+
+		                 newPassword: "required",
+		                 confirmNewPassword: {
+		                    equalTo: "#newPassword"
+		                    }
+		         
+					  },
+					   messages: {
+			                newPassword: " Enter Password",
+			                confirmNewPassword: " Enter Confirm Password Same as New Password"
+			            },
+			        	highlight : function(label) {
+							jQuery(label).closest('.form-group').addClass('error');
+							jQuery(label).closest('.form-group').removeClass('success');
+						},
+						success : function(label) {
+							label.addClass('valid').removeClass('error');
+						},	
+					
+					
+					});
+
+				
+			});
+
+
+</script>
+>>>>>>> 97a64470b18fb3971c0a8755b05a58b205c3fc6b
 </html>

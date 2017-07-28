@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lms.bean.UserBean;
 import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
-import com.lms.model.LeaveType;
+import com.lms.model.LeaveType1;
 import com.lms.service.EmployeeService;
 import com.lms.service.MasterService;
 

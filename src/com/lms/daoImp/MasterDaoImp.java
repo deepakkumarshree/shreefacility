@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lms.dao.MasterDao;
 import com.lms.model.Employee;
+import com.lms.model.LeaveType;
 import com.lms.model.Role;
 @SuppressWarnings("unchecked")
 @Repository
@@ -53,6 +54,19 @@ public class MasterDaoImp implements MasterDao{
 			// filnalRole.add(roleMap);
 		 }
 		 return managerMap;
+		
+	}
+	@Override
+	@Transactional
+	public Map<Integer,String> getLeaveType() {
+		 List<LeaveType> leaveTypeList= sessionFactory.getCurrentSession().createCriteria(LeaveType.class).list();
+		 Map<Integer,String> leaveTypeMap=new HashMap<Integer,String>();
+		 for(Object obj:leaveTypeList)
+		 {
+			 LeaveType lType=(LeaveType)obj;			
+			 leaveTypeMap.put(lType.getLeaveTypeId(), lType.getLeaveTypeName());			
+		 }
+		 return leaveTypeMap;
 		
 	}
 }

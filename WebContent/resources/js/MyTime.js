@@ -1,6 +1,65 @@
 $(document).ready(function() {
+	
+	var url	=	jQuery(location).attr('href');
+	var status = url.split("?status=")[1];
+	if(status!=undefined)
+	{
+		if (status == 'false') {
+			$('#errorbar').append("Unable to Save Data.");
+			$("#errorbardiv").removeClass("hide").addClass("show");
+		} else {
+			$('#infobar').append("Data Saved Successfully.");
+			$("#infobardiv").removeClass("hide").addClass("show");
+		}
+		$("input").keyup(function() {
+			$("#infobar").text("");
+			$("#infobardiv").removeClass("show").addClass("hide");
+			$("#errorbar").text("");
+			$("#errorbardiv").removeClass("show").addClass("hide");
+		});
+		
+	}
+	$("#leaveform" ).validate({
+		  rules: {					
+			  fromDate: {
+				required : true,
+				minlength : 4,
+			},
+			'leaveType.leaveTypeId': {
+				required : true,
+			},
+			'toDate': {
+				required : true,
+			},
+			'toDate': {
+				required : true,
+			},
+		  },
+		  messages : {},
+			highlight : function(label) {
+				jQuery(label).closest('.form-group').addClass('error');
+				jQuery(label).closest('.form-group').removeClass('success');
+			},
+			  success : function(label) {
+				label.addClass('valid').closest('.form-group').addClass('success');
+				jQuery(label).closest('.form-group').removeClass('error');
+			},  
+		
+		});
+
+	$("#save").click(function() {alert(0);
+		$("#status").val("SAVED");
+		$('#leaveform').valid();alert(1);
+		
+		
+	});
+	$("#apply").click(function() {
+		$("#status").val("PENDING");
+	});
+	
+	
   var disableddates ='${hlist}';
-  disableddates=disableddates.substring(1,disableddates.length-1);
+  if(disableddates.length>2)disableddates=disableddates.substring(1,disableddates.length-1);
 
   
   $("#fromdate").datepicker({
@@ -81,15 +140,17 @@ $(document).ready(function() {
 		  
 	function disableSpecificDates(date) { 
 		  var i= disableddates.length;
-
-	    var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
-	  
-	    if (disableddates.indexOf(string) == -1)
-	  	  {
-	  	  return [true];
-	  	  }
-	    return [false];
-	  } 
+		  if(disableddates.length>2){
+			    var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
+			  
+			    if (disableddates.indexOf(string) == -1)
+			  	  {
+			  	  return [true];
+			  	  }
+			    return [false];
+			  } 
+		  return [true];
+	}
 });
 
 

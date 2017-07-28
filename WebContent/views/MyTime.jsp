@@ -45,14 +45,14 @@
 			</div>
 		</div>
 		
-		<form:form role="form" id="leavetype-form" name="leavetype-form" method="POST" action="saveLeaveType" commandName="leavetypebean">
+		<form:form role="form" id="leaveform" name="leaveform" method="POST" action="saveLeaveType" commandName="leavetypebean">
 
 			<div class="row">
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 
 					<div class="form-group">
 						<label class="required">Leave Type</label>
-							<form:select path="leaveType" maxlength="30" cssClass="form-control">
+							<form:select path="leaveType.leaveTypeId" maxlength="30" cssClass="form-control">
 							<option selected="selected"> -- Please choose --</option>
 							<form:options items="${leaveTypeInfo}"  />
 							 </form:select>
@@ -64,8 +64,7 @@
 					<div class="form-group">
 						<label class="required">From Date</label>
 							<form:input id="fromdate" path="fromDate" tabindex="1"
-							cssClass="form-control" placeholder="dd-mm-yyyy" autocomplete="off"
-							 />
+							cssClass="form-control"  readonly="true" style="cursor:pointer;"/>
 					</div>
 				</div>
 			</div>
@@ -75,8 +74,7 @@
 					<div class="form-group">
 						<label class="required">To Date</label>
 							<form:input id="todate" path="toDate" tabindex="1"
-							cssClass="form-control" placeholder="dd-mm-yyyy" autocomplete="off"  readonly="true"
-							 />
+							cssClass="form-control" readonly="true" style="cursor:pointer;"/>
 					</div>
 				</div>
 			</div>
@@ -85,25 +83,22 @@
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 					<div class="form-group">
 						<label class="required">No Of Days</label>
-							<form:input type="text" id="noOfLeaves" path="noOfLeaves" tabindex="1"
-							cssClass="form-control" 
-							 />
+							<form:input type="text" id="noOfLeaves" path="noOfLeaves" 
+							tabindex="1" readonly="true"	cssClass="form-control"  />
 					</div>
 				</div>
 			</div>
 			
 			<div class="row">
 				<div class="col-lg-12">
-					<button type="submit" class="btn btn-default" id="save" tabindex="15">Save</button>
-					<button type="submit" class="btn btn-default" id="apply" tabindex="15">Apply</button>
-					<input type="button" class="btn btn-default"
-						onClick="window.location='<%=request.getContextPath() %>/dashboard'" tabindex="16"
+					<button type="button" class="btn btn-theme" id="save" tabindex="15">Save</button>
+					<button type="button" class="btn btn-theme" id="apply" tabindex="15">Apply</button>
+					<input type="button" class="btn btn-theme"
+						onClick="window.location='dashboard'" tabindex="16"
 						value="Exit">
 				</div>
-			</div>
-			
+			</div>			
 			<form:hidden id="status" path="status"/>
-
 		</form:form>
 
 	</div>	

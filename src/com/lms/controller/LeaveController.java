@@ -19,8 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.lms.bean.UserBean;
 import com.lms.model.LeaveRequest;
-import com.lms.model.LeaveType;
+import com.lms.model.LeaveType1;
 import com.lms.service.LeaveRequestService;
+import com.lms.service.MasterService;
 
 @Controller
 public class LeaveController {
@@ -28,6 +29,8 @@ public class LeaveController {
 	
 	@Autowired
 	private LeaveRequestService leaveTypeService;
+	@Autowired
+	private MasterService masterService;	
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -44,7 +47,7 @@ public class LeaveController {
 	    if(userBean!=null)
 	    {
 			modelAndView = new ModelAndView("leavetype","leavetypebean",new LeaveRequest());
-			modelAndView.addObject("leaveTypeInfo", LeaveType.values());		
+			modelAndView.addObject("leaveTypeInfo", masterService.getLeaveType());		
 			ArrayList<String> hList=leaveTypeService.getHolyday();
 			modelAndView.addObject("hlist",hList);	
 	    }
@@ -76,6 +79,9 @@ public class LeaveController {
 	    if(userBean!=null)
 	    {
 	    	modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());	
+	    	modelAndView.addObject("leaveTypeInfo", masterService.getLeaveType());
+	    	ArrayList<String> hList=leaveTypeService.getHolyday();
+			modelAndView.addObject("hlist",hList);	
 	    
 	    }
 		else modelAndView = new ModelAndView("redirect:login", "status",-1);	    

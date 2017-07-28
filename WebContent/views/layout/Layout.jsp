@@ -57,8 +57,8 @@
     <script src="resources/assets/js/common-scripts.js"></script>    
     <script type="text/javascript" src="resources/assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="resources/assets/js/gritter-conf.js"></script>
-    <script type="text/javascript" src="resources/plugins/datatables/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript" src="resources/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="resources/plugins/datatables/dataTables.bootstrap.min.js"></script>    
     <script type="text/javascript" src="resources/plugins/jQuery/canvasjs.min.js"></script>
     <script type="text/javascript" src="resources/plugins/jQuery/Chart.min.js"></script>
     <script type="text/javascript" src="resources/plugins/jQuery/jquery.sparkline.min.js"></script>

@@ -5,7 +5,7 @@ import java.util.Date;
 
 import javax.persistence.*;
 @Entity
-@Table(name="leaveRequest")
+@Table(name="leaverequest")
 
 public class LeaveRequest implements Serializable{
 	/**
@@ -15,82 +15,96 @@ public class LeaveRequest implements Serializable{
 
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="Req_id")
-    private int reqId;
-	 
+     @Column(name="leaverequestid")
+     private int leaverequestId;	 
 	 @OneToOne(cascade = CascadeType.ALL)
-	 @JoinColumn(name="id")
-    private Employee eId;
-	 
-	 @OneToOne(cascade = CascadeType.ALL)
-	 @JoinColumn(name="sup_id")
-    private Employee supId;
+	 @PrimaryKeyJoinColumn
+     private Employee emp;	 
+	
+	 @Column(name="appoverid")
+     private int appoverId;
 	 
 	 @Column (name = "fromDate")
-    private Date fromDate;
+     private Date fromDate;
 	 
 	 @Column (name = "ToDate")
-    private Date toDate;
+     private Date toDate;
 	 
 	 @Column (name = "noOfLeaves")
-    private int noOfLeaves;
+     private int noOfLeaves;
 	 
 	 @Enumerated(EnumType.STRING)
-    private LeaveStatus status;
+     private LeaveStatus status;
 	 
-	 public LeaveStatus getStatus() {
-		return status;
+	 @ManyToOne(cascade = CascadeType.PERSIST)
+	 @PrimaryKeyJoinColumn
+     private LeaveType leaveType;
+
+	public int getLeaverequestId() {
+		return leaverequestId;
 	}
-	public void setStatus(LeaveStatus status) {
-		this.status = status;
+
+	public void setLeaverequestId(int leaverequestId) {
+		this.leaverequestId = leaverequestId;
 	}
-	@Enumerated(EnumType.STRING)
-	 private LeaveType leaveType;
-	
-    public int getReqId() {  
-         return reqId;  
-    }  
-    public void setReqId(int reqId) {  
-        this.reqId = reqId;  
-    }  
-    
-    public Date getFromDate() {  
-        return fromDate;  
-    }  
-    
-    public void setFromDate(Date fromDate) {  
-       this.fromDate = fromDate;  
-    }  
-    
-    public int getNoOfLeaves() {
+
+	public Employee getEmp() {
+		return emp;
+	}
+
+	public void setEmp(Employee emp) {
+		this.emp = emp;
+	}
+
+	public int getAppoverId() {
+		return appoverId;
+	}
+
+	public void setAppoverId(int appoverId) {
+		this.appoverId = appoverId;
+	}
+
+	public Date getFromDate() {
+		return fromDate;
+	}
+
+	public void setFromDate(Date fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	public Date getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
+	}
+
+	public int getNoOfLeaves() {
 		return noOfLeaves;
 	}
+
 	public void setNoOfLeaves(int noOfLeaves) {
 		this.noOfLeaves = noOfLeaves;
 	}
-	public Date getToDate() {  
-        return toDate;  
-    }  
-    public void setToDate(Date toDate) {  
-       this.toDate = toDate;  
-    } 
-    
-     
-    
-    public LeaveType getLeaveType() {
+
+	public LeaveStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(LeaveStatus status) {
+		this.status = status;
+	}
+
+	public LeaveType getLeaveType() {
 		return leaveType;
 	}
+
 	public void setLeaveType(LeaveType leaveType) {
 		this.leaveType = leaveType;
-	}
+	}	 
+	 
+	 
 	
-	public Employee geteId() {
-		return eId;
-	}
-	public Employee getSupId()
-    {    	 
-   	 return supId;
-    }
-  
 
 }

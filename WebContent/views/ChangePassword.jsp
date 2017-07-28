@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="js/changepassword.js" /></script>
+	<script src="resources/js/changepassword.js" /></script>
 </head>
 
 <body>
@@ -96,8 +96,7 @@
 							jQuery(label).closest('.form-group').removeClass('success');
 						},
 						success : function(label) {
-							label.addClass('valid').closest('.form-group').addClass('success');
-							jQuery(label).closest('.form-group').removeClass('error');
+							label.addClass('valid').removeClass('error');
 						},	
 					
 					

@@ -26,5 +26,9 @@ public class MasterServiceImp implements MasterService{
 	public Map getManagers() {
 		return masterDao.getManagers();
 	}
+	@Override
+	public Map getLeaveType() {
+		return masterDao.getLeaveType();
+	}
 	
 }

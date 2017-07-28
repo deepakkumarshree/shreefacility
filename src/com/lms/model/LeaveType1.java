@@ -1,7 +1,7 @@
 package com.lms.model;
 
 
-public enum LeaveType {
+public enum LeaveType1 {
 	
 	CASUAL_SICK_LEAVE,
 	PAID_LEAVE,

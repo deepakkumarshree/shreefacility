@@ -50,6 +50,12 @@
 			<definition name="allemp" template="/views/master/EmpList.jsp">				
 			</definition>
 			
+			<definition name="addleave" template="/views/leave/AddLeave.jsp">				
+			</definition>
+			
+			<definition name="approveleave" template="/views/leave/ApproveLeave.jsp">				
+			</definition>
+			
 			
 			
 			

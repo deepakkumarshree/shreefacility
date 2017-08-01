@@ -88,12 +88,41 @@ public class LeaveController {
 		return modelAndView;
 		}
 	
-	@RequestMapping(value="/viewLeave")
-	public ModelAndView viewLeaveRequest(HttpServletRequest request, @ModelAttribute("viewLeaveBean") LeaveRequest leaveRequest){
+	@RequestMapping("/showAddLeave")
+	public ModelAndView showAddLeave(HttpServletRequest request) throws Exception{
+		ModelAndView modelAndView = null;
 		
+		UserBean userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	modelAndView = new ModelAndView("addleave","leavetypebean",new LeaveRequest());	
+	    	modelAndView.addObject("leaveTypeInfo", masterService.getLeaveType());
+	    	modelAndView.addObject("leaveBalInfo", leaveTypeService.getLeaveBalance(userBean));
+	    	modelAndView.addObject("leaveReqList", leaveTypeService.getAll());
+	    	ArrayList<String> hList=leaveTypeService.getHolyday();
+			modelAndView.addObject("hlist",hList);	
+	    
+	    }
+		else modelAndView = new ModelAndView("redirect:login", "status",-1);	    
+		return modelAndView;
+		}
+	@RequestMapping("/showApproveLeave")
+	public ModelAndView showApproveLeave(HttpServletRequest request) throws Exception{
+		ModelAndView modelAndView = null;
 		
-		return null;
-		
-	}
+		UserBean userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	modelAndView = new ModelAndView("approveleave","leavetypebean",new LeaveRequest());	
+	    	modelAndView.addObject("leaveTypeInfo", masterService.getLeaveType());
+	    	modelAndView.addObject("leaveBalInfo", leaveTypeService.getLeaveBalance(userBean));
+	    	modelAndView.addObject("leaveReqList", leaveTypeService.getAll());
+	    	ArrayList<String> hList=leaveTypeService.getHolyday();
+			modelAndView.addObject("hlist",hList);	
+	    
+	    }
+		else modelAndView = new ModelAndView("redirect:login", "status",-1);	    
+		return modelAndView;
+		}
 
 }

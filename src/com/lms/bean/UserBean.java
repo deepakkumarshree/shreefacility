@@ -1,12 +1,17 @@
 package com.lms.bean;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class UserBean {
-	String firstName;
-	String lastName;
-	String empCode;
-	Date doj;
+	private String firstName;
+	private String lastName;
+	private String empCode;
+	private Date doj;
+	private Date dob;
+	private int roleId;
+	private ArrayList<?> permissions;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -30,6 +35,24 @@ public class UserBean {
 	}
 	public void setEmpCode(String empCode) {
 		this.empCode = empCode;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+	public int getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+	public ArrayList<?> getPermissions() {
+		return permissions;
+	}
+	public void setPermissions(ArrayList<?> permissions) {
+		this.permissions = permissions;
 	}
 	
 

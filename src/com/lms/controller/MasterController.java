@@ -62,7 +62,10 @@ public class MasterController {
 		userBean = (UserBean)request.getSession().getAttribute("user");
 	    if(userBean!=null)
 	    {
-	    	modelAndView = new ModelAndView("myrecruitment","leavetypebean",new EmployeeDetails());
+	    	modelAndView = new ModelAndView("myrecruitment","empBean",new EmployeeDetails());
+	    	modelAndView.addObject("roleList", masterService.getRoles());
+	    	modelAndView.addObject("managerList", masterService.getManagers());
+	    	modelAndView.addObject("emplist", employeeService.getAll());
 	    }
 	    else  modelAndView = new ModelAndView("redirect:login", "status",-1);
 	    

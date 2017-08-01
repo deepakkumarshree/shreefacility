@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
    <body>
 
   <section id="container" >    
@@ -32,15 +33,18 @@
                       	    
                   </div>
                   <div class="tab-content" style="width: 100%;height: 100%;">
+						
 						<div class=" tab-pane fade in active" id="addemp">
-		                  <jsp:include page="/showEmployee" ></jsp:include>
-		              </div>
+							<jsp:include page="/showEmployee" ></jsp:include>	
+						</div>		              
 		             
 		               <div class="tab-pane backdiv" id="viewemp">	
-		               	<jsp:include page="/showEmployeeList" ></jsp:include>		
+		               		<jsp:include page="/showEmployeeList" ></jsp:include>		
 		              </div>
+		              
 		          </div>
-			</div>
+		          </div>
+		
           </section></section>
       </section>
   </body>

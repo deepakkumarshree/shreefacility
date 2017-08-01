@@ -1,6 +1,7 @@
 package com.lms.controller;
 
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lms.bean.UserBean;
-import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
-import com.lms.model.LeaveType1;
 import com.lms.service.EmployeeService;
 import com.lms.service.MasterService;
 
@@ -50,9 +49,15 @@ public class MasterController {
 	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
 	public ModelAndView saveEmployee(HttpServletRequest request,@ModelAttribute("empBean")EmployeeDetails employee, BindingResult result)throws Exception
 	{
-	  
+		Date dob=new SimpleDateFormat("dd-mm-yyyy").parse(request.getParameter("dob"));
+	 	employee.setDob(dob);
+	 	Date joinDate=new SimpleDateFormat("dd-mm-yyyy").parse(request.getParameter("emp.doj"));
+	 	employee.getEmp().setDoj(joinDate);
+		
 		boolean status=employeeService.save(employee,request);
 	 	userBean = (UserBean)request.getSession().getAttribute("user");
+	 	
+	 	System.out.println(request.getParameter("dob"));
 	    if(userBean!=null)
 	    {
 	    	return new ModelAndView("redirect:myrecruitment", "status",status);
@@ -66,7 +71,10 @@ public class MasterController {
 		userBean = (UserBean)request.getSession().getAttribute("user");
 	    if(userBean!=null)
 	    {
-	    	modelAndView = new ModelAndView("myrecruitment","leavetypebean",new EmployeeDetails());
+	    	modelAndView = new ModelAndView("myrecruitment","empBean",new EmployeeDetails());
+	    	modelAndView.addObject("roleList", masterService.getRoles());
+	    	modelAndView.addObject("managerList", masterService.getManagers());
+	    	modelAndView.addObject("emplist", employeeService.getAll());
 	    }
 	    else  modelAndView = new ModelAndView("redirect:login", "status",-1);
 	    

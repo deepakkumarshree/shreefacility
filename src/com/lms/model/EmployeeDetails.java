@@ -1,6 +1,7 @@
 package com.lms.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +13,8 @@ import javax.persistence.JoinColumn;
 
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="employeedetails")
@@ -27,9 +30,10 @@ public class EmployeeDetails implements Serializable{
 	  private String emailId;
 	  @OneToOne(fetch=FetchType.EAGER )
 	  @JoinColumn(name="empid")
-	  private Employee emp;	 
+	  private Employee emp;	
+	  @Temporal(TemporalType.DATE)
 	  @Column(name="dob")
-	  private String dob;
+	  private Date dob;
 	  @Column(name="pan")
 	  private String pan;
 	  @Column(name="paddress")
@@ -50,10 +54,10 @@ public class EmployeeDetails implements Serializable{
 	  @Column(name="fathername")
 	  private String fathername;	  
 		
-	public String getDob() {
+	public Date getDob() {
 		return dob;
 	}
-	public void setDob(String dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
 	public String getPan() {

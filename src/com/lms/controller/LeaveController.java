@@ -1,9 +1,8 @@
 package com.lms.controller;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,7 +18,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.lms.bean.UserBean;
 import com.lms.model.LeaveRequest;
-import com.lms.model.LeaveType1;
 import com.lms.service.LeaveRequestService;
 import com.lms.service.MasterService;
 

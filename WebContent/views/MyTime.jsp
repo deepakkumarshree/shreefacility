@@ -18,9 +18,13 @@
 						 
                       	<div class="col-md-12 col-sm-9">
                       		<ul class="nav nav-tabs" id="myTab">
-								<!-- <li class="active"><a href="#attendance" data-toggle="tab">Attendance</a></li> -->
+								 
 								<li><a href="#leave" data-toggle="tab">Leave</a></li>
+
 							   <li><a href="#apleidleave" data-toggle="tab">LeaveApproval</a></li>
+
+								<li class="active"><a href="#attendance" data-toggle="tab">Attendance</a></li> 
+
 								
 							</ul>
                       	</div>

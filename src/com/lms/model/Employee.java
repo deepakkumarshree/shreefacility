@@ -1,6 +1,7 @@
 package com.lms.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -44,8 +47,9 @@ public class Employee implements Serializable  {
 	  private String lastname;
 	@Column(name="sex")
 	  private String sex;
+	@Temporal(TemporalType.DATE)
 	@Column(name="doj")
-	  private String doj;
+	  private Date doj;
 	@Column(name="repotingto")
 	  private String repotingto;
 	@Column(name="designation")
@@ -94,10 +98,10 @@ public class Employee implements Serializable  {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public String getDoj() {
+	public Date getDoj() {
 		return doj;
 	}
-	public void setDoj(String doj) {
+	public void setDoj(Date doj) {
 		this.doj = doj;
 	}
 	public String getRepotingto() {

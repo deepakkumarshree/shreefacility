@@ -1,7 +1,5 @@
 package com.lms.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lms.bean.UserBean;
-import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
-import com.lms.model.LeaveType1;
 import com.lms.service.EmployeeService;
 import com.lms.service.MasterService;
 

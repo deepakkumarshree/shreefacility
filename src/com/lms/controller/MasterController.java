@@ -1,5 +1,8 @@
 package com.lms.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,9 +49,15 @@ public class MasterController {
 	@RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
 	public ModelAndView saveEmployee(HttpServletRequest request,@ModelAttribute("empBean")EmployeeDetails employee, BindingResult result)throws Exception
 	{
-	  
+		Date dob=new SimpleDateFormat("dd-mm-yyyy").parse(request.getParameter("dob"));
+	 	employee.setDob(dob);
+	 	Date joinDate=new SimpleDateFormat("dd-mm-yyyy").parse(request.getParameter("emp.doj"));
+	 	employee.getEmp().setDoj(joinDate);
+		
 		boolean status=employeeService.save(employee,request);
 	 	userBean = (UserBean)request.getSession().getAttribute("user");
+	 	
+	 	System.out.println(request.getParameter("dob"));
 	    if(userBean!=null)
 	    {
 	    	return new ModelAndView("redirect:myrecruitment", "status",status);

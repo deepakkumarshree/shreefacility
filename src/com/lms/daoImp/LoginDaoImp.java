@@ -37,9 +37,11 @@ public class LoginDaoImp implements LoginDao{
 	      if(u!=null){
 	    	  userId=u.getEmpid();
 	    	  UserBean user=new UserBean();
+	    	  user.setId(userId);
 	    	  user.setEmpCode(u.getEmpcode());
 	    	  user.setFirstName(u.getFirstname());
 	    	  user.setLastName(u.getLastname());
+	    	  user.setDoj(u.getDoj());
 		      HttpSession session = request.getSession();
 		      session.setAttribute("user", user);
 		    

@@ -28,9 +28,11 @@ public class EmployeeDetails implements Serializable{
 	  @Id	 
 	  @Column(name="emailId")
 	  private String emailId;
+	  
 	  @OneToOne(fetch=FetchType.EAGER )
 	  @JoinColumn(name="empid")
 	  private Employee emp;	
+	  
 	  @Temporal(TemporalType.DATE)
 	  @Column(name="dob")
 	  private Date dob;

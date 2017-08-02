@@ -27,9 +27,12 @@ $(document).ready(function() {
 		
 		 $("#dob").datepicker({
 			    dateFormat: "dd-mm-yy",
-			    changeMonth: true,
-			    changeYear: true,
-			    
+			    changeMonth : true,
+				changeYear : true,
+				timepicker : false,
+				closeOnDateSelect : true,
+				scrollInput : true,
+				maxDate : -6570,			 
 			});
 		  
 		   $("#doj").datepicker({

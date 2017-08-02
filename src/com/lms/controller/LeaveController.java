@@ -124,5 +124,21 @@ public class LeaveController {
 		else modelAndView = new ModelAndView("redirect:login", "status",-1);	    
 		return modelAndView;
 		}
+	@RequestMapping(value="/updateLeaveStatus",method = RequestMethod.POST)
+	public ModelAndView updateLeaveStatus(HttpServletRequest request,@ModelAttribute("leavetypebean") LeaveRequest leaveType)throws Exception{
+		System.out.println("Controller : MasterController Method :saveLeaveType");	
+		System.out.println("leaveids :::::::::::::>>>"+request.getParameter("leaveids"));
+		ModelAndView modelAndView = null;
+		UserBean userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	/*boolean status = leaveTypeService.save(leaveType, request);
+	    	modelAndView= new ModelAndView("redirect:mytime", "status",status);*/
+	    	modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());	
+	    }
+	    else modelAndView = new ModelAndView("redirect:login", "status",-1);	 
+	    
+	    return modelAndView;
+	}
 
 }

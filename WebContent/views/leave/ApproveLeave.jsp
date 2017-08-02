@@ -18,12 +18,13 @@
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 			</div>
 		</div>
-		              <form:form role="form" id="leaveform" name="leaveform" method="POST" action="saveLeaveType" commandName="leavetypebean">
+		            
 		         
-			<form:hidden id="status" path="status"/>
-		</form:form>
+			
+		
 
-	</div>	<!-- End of fist column -->
+	  <form:form role="form" id="leaveform" name="leaveform" method="POST" action="updateLeaveStatus" commandName="leavetypebean">
+		<input type="hidden" id="leaveids" name="leaveids"/>
 	 <div class="col-lg-8 container-fluid">
 	 <h3 class="widgettitle">Applied Leave</h3> 
 	 <div class="row">
@@ -55,7 +56,7 @@
 											<td><c:out value="${ob.fromDate}" /></td>	
 											<td><c:out value="${ob.toDate}" /></td>	
 											<td><c:out value="${ob.status}" /></td>	
-											<td><input type="checkbox" name="id" value="Java"></td>						
+											<td><input type="checkbox" name="id" value="${ob.leaverequestId}"></td>						
 																	
 										</tr>
 									</c:forEach>
@@ -77,6 +78,8 @@
 				</div>
 			</div>		 
 	 </div>
+	 </form:form>
+	 </div>
   </body>
    <script>
 			$(document).ready(function() {
@@ -89,6 +92,19 @@
 			            	  $('input[type="checkbox"]').prop("checked",false);
 			            }
 			        });
+				 
+				 
+				 $('#approve').click(function(){
+					 $('input[type=checkbox]').each(function () {
+				           if (this.checked) {
+				              alert($(this).val()); 
+				              $('#leaveids').val( $('#leaveids').val()+'@'+$(this).val());
+				           }
+						});
+					 alert($('#leaveids').val());
+				 });
+			
+				 
 			});
 			</script>
 </html>

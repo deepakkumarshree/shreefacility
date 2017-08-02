@@ -26,8 +26,16 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	@Transactional
 	public boolean save(EmployeeDetails employee) {
 		boolean status=false;
-		//sessionFactory.getCurrentSession().saveOrUpdate(employee.getEmp());
+		if(employee.getEmp().getEmpid()==0)
+		{
+		sessionFactory.getCurrentSession().saveOrUpdate(employee.getEmp());
 		sessionFactory.getCurrentSession().saveOrUpdate(employee);
+		}
+		else{
+		
+		sessionFactory.getCurrentSession().update(employee.getEmp());
+		sessionFactory.getCurrentSession().update(employee);
+		}
 		if(employee.getEmp().getEmpid()>0)
 			status=true;
 		else status=false;

@@ -263,7 +263,8 @@
 						value="Exit">
 				</div>
 			</div>
-
+		
+		<form:hidden id="empid" path="emp.empid" />
 
 		</form:form>
 

@@ -21,6 +21,7 @@ public class LeaveRequestServiceImpl implements LeaveRequestService{
 	private LeaveRequestDao leaveTypeDao;
 	
 	@Override
+	@Transactional
 	public List<LeaveRequest> getAll() {			
 		return leaveTypeDao.getAll();
 	}
@@ -46,9 +47,11 @@ public class LeaveRequestServiceImpl implements LeaveRequestService{
 	}
 	@Override
 	public ArrayList<String> getHolyday() {			
-		return leaveTypeDao.getHolyday();
+		//return leaveTypeDao.getHolyday();
+		return null;
 	}
 	@Override
+	@Transactional
 	public Map<String,String> getLeaveBalance(UserBean userBean) {			
 		return leaveTypeDao.getLeaveBalance(userBean);
 	}

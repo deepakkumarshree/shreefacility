@@ -25,6 +25,7 @@
 
 	  <form:form role="form" id="leaveform" name="leaveform" method="POST" action="updateLeaveStatus" commandName="leavetypebean">
 		<input type="hidden" id="leaveids" name="leaveids"/>
+		<input type="hidden" id="statusnew" name="statusnew"/>
 	 <div class="col-lg-8 container-fluid">
 	 <h3 class="widgettitle">Applied Leave</h3> 
 	 <div class="row">
@@ -42,7 +43,7 @@
 									<th>From Date</th>
 									<th>To Date</th>
 									<th>Status</th>	
-									<th><input type="checkbox" name="checkall" id="checkall"></th> 					
+									<th><input type="checkbox" name="checkall" id="checkall" value=""></th> 					
 									
 								</tr>
 							</thead>
@@ -70,8 +71,8 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<button type="submit" class="btn btn-theme" id="approve" tabindex="15">Approve</button>
-					<button type="submit" class="btn btn-theme" id="reject" tabindex="15">Reject</button>
+					<button type="submit" class="btn btn-theme" id="status1" tabindex="15" value='A'>Approve</button>
+					<button type="submit" class="btn btn-theme" id="status2" tabindex="15" value='R'>Reject</button>
 					<input type="button" class="btn btn-theme"
 						onClick="window.location='dashboard'" tabindex="16"
 						value="Exit">
@@ -92,19 +93,23 @@
 			            	  $('input[type="checkbox"]').prop("checked",false);
 			            }
 			        });
-				 
-				 
-				 $('#approve').click(function(){
+	 			$('button[id^="status"]').click(function(){
+					 
+	 				$('#statusnew').val($(this).val());// strore status click
 					 $('input[type=checkbox]').each(function () {
 				           if (this.checked) {
 				              alert($(this).val()); 
+				              if($(this).val()!='')
 				              $('#leaveids').val( $('#leaveids').val()+'@'+$(this).val());
 				           }
 						});
-					 alert($('#leaveids').val());
+					 //alert($('#leaveids').val());
 				 });
 			
 				 
+				
+				 
 			});
 			</script>
+			
 </html>

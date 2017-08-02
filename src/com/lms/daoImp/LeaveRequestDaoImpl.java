@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lms.bean.UserBean;
 import com.lms.dao.LeaveRequestDao;
 import com.lms.model.LeaveRequest;
+import com.lms.model.LeaveStatus;
 @Repository
 public class LeaveRequestDaoImpl implements LeaveRequestDao{
 	@Autowired
@@ -81,6 +83,27 @@ public class LeaveRequestDaoImpl implements LeaveRequestDao{
 		
 		return leaveBalMap;
 	}
-	
-
-}
+	@Override
+	public int leaveStatus(String leaveIds,String status) {
+		String[]leaveId=leaveIds.split("@");
+		int result=0;
+		for(String leaveid:leaveId){
+			if(leaveid.length()>0)
+			{
+			String hql = "UPDATE LeaveRequest set status = :approve "  + 
+		             "WHERE leaverequestid = :leaveId";	
+			Query query = sessionFactory.getCurrentSession().createQuery(hql);
+			if("A".equals(status))
+				query.setParameter("approve",LeaveStatus.APPROVED);
+			else
+				query.setParameter("approve",LeaveStatus.REJECTED);
+			
+			query.setParameter("leaveId", leaveid);
+			 result = query.executeUpdate();
+			
+			
+			}
+		}
+		return result;
+	}
+	}

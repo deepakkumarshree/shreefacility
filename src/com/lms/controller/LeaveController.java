@@ -134,6 +134,8 @@ public class LeaveController {
 	    {
 	    	/*boolean status = leaveTypeService.save(leaveType, request);
 	    	modelAndView= new ModelAndView("redirect:mytime", "status",status);*/
+	    	leaveTypeService.leaveStatus(request.getParameter("leaveids"),request.getParameter("statusnew"));
+	    	
 	    	modelAndView = new ModelAndView("mytime","leavetypebean",new LeaveRequest());	
 	    }
 	    else modelAndView = new ModelAndView("redirect:login", "status",-1);	 

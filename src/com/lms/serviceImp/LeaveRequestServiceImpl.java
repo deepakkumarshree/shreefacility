@@ -52,6 +52,14 @@ public class LeaveRequestServiceImpl implements LeaveRequestService{
 	public Map<String,String> getLeaveBalance(UserBean userBean) {			
 		return leaveTypeDao.getLeaveBalance(userBean);
 	}
+	@Override
+	@Transactional
+	public int leaveStatus(String leaveIds,String status) {
+
+		int res=leaveTypeDao.leaveStatus(leaveIds,status);
+		return res;
+	}
+	
 	
 
 }

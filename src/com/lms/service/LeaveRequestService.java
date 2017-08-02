@@ -18,5 +18,5 @@ public interface LeaveRequestService {
 	public boolean delete(LeaveRequest leaveType,HttpServletRequest request);
 	public ArrayList<String> getHolyday();
 	public Map<String,String> getLeaveBalance(UserBean userBean);
-
-}
+	public int leaveStatus(String leaveIds,String status);
+	}

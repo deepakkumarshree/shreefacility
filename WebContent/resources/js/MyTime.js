@@ -48,6 +48,13 @@ $(document).ready(function() {
 		$("#status").val("PENDING");
 	});
 	
+	$("#approve").click(function() {
+		$("#status").val("APPROVED");
+	});
+	$("#reject").click(function() {
+		$("#status").val("REJECTED");
+	});
+	
 	
   var disableddates ='${hlist}';
   if(disableddates.length>2)disableddates=disableddates.substring(1,disableddates.length-1);

@@ -31,9 +31,11 @@ public class Employee implements Serializable  {
 	  @GeneratedValue(strategy=GenerationType.AUTO)
 	  @Column(name="empid")
 	  private int empid;
+	
 	 @Column(name="password")
 	  private String password;
-	@OneToOne(fetch=FetchType.EAGER )
+	
+	 @OneToOne(fetch=FetchType.EAGER )
 	@JoinColumn(name="roleId")
 	private Role role;	
 	

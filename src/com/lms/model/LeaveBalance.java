@@ -7,6 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -41,8 +42,8 @@ public class LeaveBalance {
 	 @Column(name ="maternity")
 	 private int maternity;
 	 
-	 @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	@PrimaryKeyJoinColumn
+	 @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	 @JoinColumn(name ="empid")
 	 private Employee emp;
 
 	public int getLeavebalanceId() {

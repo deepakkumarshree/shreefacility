@@ -19,7 +19,7 @@ import com.lms.service.LeaveRequestService;
 public class LeaveRequestServiceImpl implements LeaveRequestService{
 	@Autowired
 	private LeaveRequestDao leaveTypeDao;
-	@Transactional
+	
 	@Override
 	public List<LeaveRequest> getAll() {			
 		return leaveTypeDao.getAll();

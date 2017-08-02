@@ -1,20 +1,22 @@
 package com.lms.daoImp;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lms.bean.UserBean;
 import com.lms.dao.LeaveRequestDao;
+import com.lms.model.LeaveBalance;
 import com.lms.model.LeaveRequest;
 @Repository
 public class LeaveRequestDaoImpl implements LeaveRequestDao{
@@ -22,6 +24,7 @@ public class LeaveRequestDaoImpl implements LeaveRequestDao{
 	  private SessionFactory sessionFactory;
 	@SuppressWarnings("unchecked")
 	@Override
+	@Transactional
 	public List<LeaveRequest> getAll() {
 		try{
 			return sessionFactory.getCurrentSession().createCriteria(LeaveRequest.class).list();
@@ -69,15 +72,58 @@ public class LeaveRequestDaoImpl implements LeaveRequestDao{
 		}
 		return holydayList;
 	}
+	@Transactional
 	public Map<String,String> getLeaveBalance(UserBean userBean) 
 	{
+		int causalLeave = 0;
+		int paidLeave = 0;
+		int optionalLeave = 2;
 		
 		Map<String,String> leaveBalMap=new HashMap<String,String>();
-		leaveBalMap.put("Casual Leave","12");
-		leaveBalMap.put("Paid Leave","12");
-		leaveBalMap.put("Optional Leave","2");
+		 Calendar cal = Calendar.getInstance();
+		 int currentYear = cal.get(Calendar.YEAR);
+		 cal.setTime(userBean.getDoj());
+		int empDOJYear = cal.get(Calendar.YEAR);
+		if(empDOJYear == currentYear )
+		{
+			
+			
+		}
+		else {
+			Calendar oldEmpCal = Calendar.getInstance();
+			int oldEmpMonth = oldEmpCal.get(Calendar.MONTH);
+			if (oldEmpMonth>= 4 && oldEmpMonth<=6)
+			{
+				causalLeave=3;
+				paidLeave=6;
+				}
+			else if(oldEmpMonth>= 7 && oldEmpMonth <=9)
+			{				
+				causalLeave=6;
+				paidLeave=6;				
+			}
+            else if(oldEmpMonth>= 10 && oldEmpMonth <=12)
+            {          	
+            	causalLeave=9;
+				paidLeave=12;				
+			}
+            else if(oldEmpMonth>= 1 && oldEmpMonth <=3)
+            {			
+            	causalLeave=12;
+				paidLeave=12;				
+			}			
+		}
 		
+		 Criteria leaveBalance = sessionFactory.getCurrentSession().createCriteria(LeaveBalance.class).
+				 add(Restrictions.eq("emp.id", userBean.getId()));
+		LeaveBalance balance = (LeaveBalance) leaveBalance.uniqueResult();
+		int empPaidLeave = paidLeave - balance.getPlTaken();
+		int empCausalLeave = causalLeave - balance.getSlTaken();
+		int empOptionalLeave = optionalLeave - balance.getOptional();
 		
+		leaveBalMap.put("Casual Leave", Integer.valueOf(empCausalLeave).toString());
+		leaveBalMap.put("Paid Leave",Integer.valueOf(empPaidLeave).toString() );
+		leaveBalMap.put("Optional Leave ", Integer.valueOf(empOptionalLeave).toString());
 		
 		return leaveBalMap;
 	}

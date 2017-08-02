@@ -12,5 +12,5 @@ public interface LeaveRequestDao {
 	public List<LeaveRequest> getAll();
 	public boolean save(LeaveRequest leaveType);
 	public ArrayList<String> getHolyday();
-	public Map<String,String> getLeaveBalance(UserBean userBean) ;
+	public Map<String, String> getLeaveBalance(UserBean userBean) ;
 }

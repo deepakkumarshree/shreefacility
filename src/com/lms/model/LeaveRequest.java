@@ -16,13 +16,15 @@ public class LeaveRequest implements Serializable{
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.AUTO)
      @Column(name="leaverequestid")
-     private int leaverequestId;	 
-	 @OneToOne(cascade = CascadeType.ALL)
-	 @PrimaryKeyJoinColumn
+     private int leaverequestId;	
+	 
+	 @ManyToOne(cascade = CascadeType.ALL,optional= false)
+	 @JoinColumn(name="empid")
      private Employee emp;	 
-	
-	 @Column(name="appoverid")
-     private int appoverId;
+	 
+	 @ManyToOne(optional = false )
+	 @Column(name="repotingto")
+     private Employee employee;
 	 
 	 @Column (name = "fromDate")
      private Date fromDate;
@@ -39,7 +41,10 @@ public class LeaveRequest implements Serializable{
 	 @ManyToOne(cascade = CascadeType.PERSIST)
 	 @PrimaryKeyJoinColumn
      private LeaveType leaveType;
-
+	 
+	 @Column(name ="leaveReason")
+     private String leaveReason;
+	 
 	public int getLeaverequestId() {
 		return leaverequestId;
 	}
@@ -56,13 +61,7 @@ public class LeaveRequest implements Serializable{
 		this.emp = emp;
 	}
 
-	public int getAppoverId() {
-		return appoverId;
-	}
-
-	public void setAppoverId(int appoverId) {
-		this.appoverId = appoverId;
-	}
+	
 
 	public Date getFromDate() {
 		return fromDate;
@@ -102,9 +101,22 @@ public class LeaveRequest implements Serializable{
 
 	public void setLeaveType(LeaveType leaveType) {
 		this.leaveType = leaveType;
-	}	 
-	 
-	 
-	
+	}
 
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public String getLeaveReason() {
+		return leaveReason;
+	}
+
+	public void setLeaveReason(String leaveReason) {
+		this.leaveReason = leaveReason;
+	}	
+	
 }

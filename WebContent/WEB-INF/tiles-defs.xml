@@ -16,7 +16,7 @@
 	
 	
 		
-		<definition name="innerLayout" template="/jsp/layout/InnerLayout.jsp">
+		<definition name="innerLayout" template="/views/layout/InnerLayout.jsp">
 			<put-attribute name="title" value="Shree Partners Facilities" />
 			<put-attribute name="body" value="" />
 		</definition>
@@ -54,6 +54,11 @@
 			</definition>
 			
 			<definition name="approveleave" template="/views/leave/ApproveLeave.jsp">				
+			</definition>
+			
+			<definition name="updateemployee" extends="innerLayout">
+				<put-attribute name="title" value="Update Employee" />
+				<put-attribute name="body" value="/views/master/UpdateEmployee.jsp" />
 			</definition>
 			
 			

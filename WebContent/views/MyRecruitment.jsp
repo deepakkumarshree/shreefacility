@@ -6,21 +6,7 @@
   <section id="container" >    
       <section id="main-content">
           <section class="wrapper">
-          <!-- <div class="col-lg-12 hide" id="infobardiv">
-			<div class="alert alert-info" id="infobar">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-			</div>
-		</div>
-
-		<div class="col-lg-12 hide" id="errorbardiv">
-			<div class="alert-error alert-error-info" id="errorbar">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-			</div>
-		</div> -->
-            
                   <div class="col-lg-12 main-chart">
-        
-                                        				
 					<div class="row">
 						 
                       	<div class="col-md-12 col-sm-12">
@@ -38,7 +24,7 @@
 							<jsp:include page="/showEmployee" ></jsp:include>	
 						</div>		              
 		             
-		               <div class="tab-pane backdiv" id="viewemp">	
+		               <div class=" col-lg-12 tab-pane" id="viewemp">	
 		               		<jsp:include page="/showEmployeeList" ></jsp:include>		
 		              </div>
 		              

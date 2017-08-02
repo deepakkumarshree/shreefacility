@@ -8,22 +8,8 @@
 <body>
  
 <div class="container-fluid">
-	<h4 class="widgettitle">Employee List</h4>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hide"
-			id="infobardiv">
-			<div class="alert alert-info alert-dismissable" id="infobar">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-			</div>
-		</div>
-
-		<div class="col-lg-12 hide" id="errorbardiv">
-			<div class="alert-error alert-error-info" id="errorbar">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-			</div>
-		</div>
-		
+	<h4 class="widgettitle">Employee List</h4>		
    		<form:form role="form" id="emplist-form" path="emplist-form" action="" commandName="empBean">	
-      		
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="box">
@@ -32,11 +18,12 @@
 							
 							<thead>
 								<tr>
-									<th style="width: 5%">Sr No</th>
+									<th style="width: 2%">Sr No</th>
 									<th style="width: 10%">Emp Code</th>
 									<th style="width: 10%">First Name</th>									
 									<th style="width: 10%">Last Name</th>
 									<th style="width: 10%">Address</th>
+									
 								</tr>
 							</thead>
 							
@@ -47,10 +34,10 @@
 											<td class="text-center">${status.index+1}
 												<input type="hidden" name="code${status.index}" id="code${status.index}" value="${ob.emp.empcode}" />
 											</td>
-											<td class="text-center"><c:out value="${ob.emp.empcode}"/></td>
+											<td class="text-center"><a href="updateEmployee?empId=${ob.emp.empid}" id="addConsig" class="iframe" onclick=""><c:out value="${ob.emp.empcode}"/></a></td>
 											<td><c:out value="${ob.emp.firstname}" /></td>											
 											<td><c:out value="${ob.emp.lastname}" /></td>											
-											<td><c:out value="${ob.paddress}" /></td>
+											<td><c:out value="${ob.paddress}" /></td>											
 											
 										</tr>
 									</c:forEach>
@@ -82,8 +69,17 @@
       "searching": false,
       "ordering": false,
       "info": false,
-      "autoWidth": true
+      "autoWidth": true,
+      /* "overflow-y":scroll,
+      "overflow-x":hidden, */
+     
     });
+    $(".iframe").colorbox({
+		iframe : true,
+		width : "90%",
+		height : "80%",
+		scrolling : true,
+	});
   }); 
 </script>	
 	

@@ -62,6 +62,7 @@
     <script type="text/javascript" src="resources/plugins/jQuery/canvasjs.min.js"></script>
     <script type="text/javascript" src="resources/plugins/jQuery/Chart.min.js"></script>
     <script type="text/javascript" src="resources/plugins/jQuery/jquery.sparkline.min.js"></script>
+    <script src="resources/bootstrap/js/colorbox/jquery.colorbox.js"></script>
     
   </head>
 </head>

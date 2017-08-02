@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lms.bean.UserBean;
@@ -90,6 +91,23 @@ public class MasterController {
 	    {
 	    	modelAndView = new ModelAndView("allemp","empBean",new EmployeeDetails());	
 	    	modelAndView.addObject("emplist", employeeService.getAll());
+	    }
+	    else  modelAndView = new ModelAndView("redirect:login", "status",-1);
+	   
+	   return modelAndView;
+	}
+	@RequestMapping("/updateEmployee")
+	public ModelAndView updateEmployee(HttpServletRequest request,@ModelAttribute("empBean")EmployeeDetails employee,@RequestParam("empId") String empId)throws Exception{
+	 
+		System.out.println("Controller :MasterController Method :updateEmployee");
+	   ModelAndView modelAndView = null;
+	   userBean = (UserBean)request.getSession().getAttribute("user");
+	    if(userBean!=null)
+	    {
+	    	employee=employeeService.getEmployee(empId);
+	    	modelAndView = new ModelAndView("updateemployee","empBean",employee);   	
+	       	modelAndView.addObject("roleList", masterService.getRoles());
+	    	modelAndView.addObject("managerList", masterService.getManagers());
 	    }
 	    else  modelAndView = new ModelAndView("redirect:login", "status",-1);
 	   

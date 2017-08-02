@@ -10,7 +10,7 @@ import com.lms.model.EmployeeDetails;
 
 public interface EmployeeService {
 	public List<EmployeeDetails> getAll();
-	public Employee get(int empId);
+	public EmployeeDetails getEmployee(String empCode);
 	public boolean save(EmployeeDetails leaveType,HttpServletRequest request);
 	public boolean update(EmployeeDetails leaveType,HttpServletRequest request);
 	public boolean delete(EmployeeDetails leaveType,HttpServletRequest request);

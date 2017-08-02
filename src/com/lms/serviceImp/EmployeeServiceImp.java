@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lms.dao.EmployeeDao;
 
-import com.lms.model.Employee;
 import com.lms.model.EmployeeDetails;
 import com.lms.service.EmployeeService;
 @Service
@@ -25,9 +24,10 @@ public class EmployeeServiceImp implements EmployeeService {
 	}
 
 	@Override
-	public Employee get(int empId) {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public EmployeeDetails getEmployee(String empId) {
+		return employeeDao.getEmployee(empId);
+		
 	}
 
 	@Override

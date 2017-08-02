@@ -23,7 +23,7 @@ public class LeaveRequest implements Serializable{
      private Employee emp;	 
 	 
 	 @ManyToOne(optional = false )
-	 @Column(name="repotingto")
+	 @JoinColumn(name="repotingto")
      private Employee employee;
 	 
 	 @Column (name = "fromDate")

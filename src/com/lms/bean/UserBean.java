@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class UserBean {
+	private int id;
 	private String firstName;
 	private String lastName;
 	private String empCode;
@@ -12,6 +13,13 @@ public class UserBean {
 	private int roleId;
 	private ArrayList<?> permissions;
 	
+		
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getFirstName() {
 		return firstName;
 	}

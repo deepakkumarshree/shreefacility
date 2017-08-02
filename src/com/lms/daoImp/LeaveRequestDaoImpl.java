@@ -115,7 +115,7 @@ public class LeaveRequestDaoImpl implements LeaveRequestDao{
 		}
 		
 		 Criteria leaveBalance = sessionFactory.getCurrentSession().createCriteria(LeaveBalance.class).
-				 add(Restrictions.eq("emp.id", userBean.getId()));
+				 add(Restrictions.eq("emp.empid", userBean.getId()));
 		LeaveBalance balance = (LeaveBalance) leaveBalance.uniqueResult();
 		int empPaidLeave = paidLeave - balance.getPlTaken();
 		int empCausalLeave = causalLeave - balance.getSlTaken();

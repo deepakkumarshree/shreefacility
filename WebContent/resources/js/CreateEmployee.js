@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 		
 		var url	=	jQuery(location).attr('href');
@@ -25,20 +27,29 @@ $(document).ready(function() {
 			 
 		});
 		
-		 $("#dob").datepicker({
-			    dateFormat: "dd-mm-yy",
-			    changeMonth : true,
+		 $("#dob").datetimepicker({
+			 format : 'd/m/Y',
+				changeMonth : true,
 				changeYear : true,
 				timepicker : false,
-				closeOnDateSelect : true,
-				scrollInput : true,
-				maxDate : -6570,			 
+				closeOnDateSelect :true,
+				scrollInput : false,
+				//maxDate:'01/01/1998',//yesterday is minimum date(for today use 0 or -1970/01/01)
+				//minDate:'01/01/1930',//tomorrow is maximum date calendar
+				maxDate:'0',
+						 
 			});
 		  
-		   $("#doj").datepicker({
-			    dateFormat: "dd-mm-yy",
-			    changeMonth: true,
-			    changeYear: true,
+		   $("#doj").datetimepicker({
+			   format : 'd/m/Y',
+				changeMonth : true,
+				changeYear : true,
+				timepicker : false,
+				closeOnDateSelect :true,
+				scrollInput : false,
+				//maxDate:'01/01/1998',//yesterday is minimum date(for today use 0 or -1970/01/01)
+				//minDate:'01/01/1930',//tomorrow is maximum date calendar
+				maxDate:'0',
 			   
 			}); 
 		

@@ -39,6 +39,7 @@
 							<thead>
 								<tr>
 									<th>Sr No</th>
+									<th>Employee Name</th>
 									<th>Leave Type</th>
 									<th>From Date</th>
 									<th>To Date</th>
@@ -53,6 +54,7 @@
 									<c:forEach var="ob" items="${leaveReqList}" varStatus="status">
 										<tr>
 											<td class="text-center">${status.index+1}</td>
+											<td class="text-center"><c:out value="${ob.emp.firstname}"/></td>
 											<td class="text-center"><c:out value="${ob.leaveType.leaveTypeName}"/></td>
 											<td><c:out value="${ob.fromDate}" /></td>	
 											<td><c:out value="${ob.toDate}" /></td>	

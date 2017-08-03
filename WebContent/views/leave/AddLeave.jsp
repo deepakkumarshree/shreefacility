@@ -119,6 +119,7 @@
 				</div>
 			</div>			
 			<form:hidden id="status" path="status"/>
+			<form:hidden id="emp.empid" path="emp.empid"/>
 		</form:form>
 
 	</div>	<!-- End of fist column -->

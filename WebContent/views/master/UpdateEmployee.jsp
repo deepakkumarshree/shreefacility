@@ -265,6 +265,7 @@
 			</div>
 		
 		<form:hidden id="empid" path="emp.empid" />
+		<form:hidden id="passowrd" path="emp.password" />
 
 		</form:form>
 

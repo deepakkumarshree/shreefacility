@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lms.bean.UserBean;
 import com.lms.dao.LeaveRequestDao;
+import com.lms.model.EmployeeDetails;
 import com.lms.model.LeaveBalance;
 import com.lms.model.LeaveRequest;
 import com.lms.model.LeaveStatus;
@@ -29,12 +30,25 @@ public class LeaveRequestDaoImpl implements LeaveRequestDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<LeaveRequest> getAll() {
+		List result1=null;
 		try {
-			return sessionFactory.getCurrentSession().createCriteria(LeaveRequest.class).list();
+			
+			
+			//return sessionFactory.getCurrentSession().createCriteria(LeaveRequest.class).list();
+			
+			/*Criteria empdetailCriteria = sessionFactory.getCurrentSession().createCriteria(LeaveRequest.class).
+					add(Restrictions.eq("emp.repotingto","EMP001"));*/
+			
+			Criteria empdetailCriteria = sessionFactory.getCurrentSession().createCriteria(LeaveRequest.class);
+			Criteria empCriteria =  empdetailCriteria .createCriteria("emp");
+			empCriteria.add(Restrictions.eq("repotingto","EMP001"));
+
+			
+			 result1=empdetailCriteria.list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return result1;
 	}
 
 	@Transactional

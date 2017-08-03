@@ -19,12 +19,8 @@ public class LeaveRequest implements Serializable{
      private int leaverequestId;	
 	 
 	 @ManyToOne(cascade = CascadeType.ALL,optional= false)
-	 @JoinColumn(name="empid")
+	 @PrimaryKeyJoinColumn
      private Employee emp;	 
-	 
-	 @ManyToOne(optional = false )
-	 @JoinColumn(name="repotingto")
-     private Employee employee;
 	 
 	 @Column (name = "fromDate")
      private Date fromDate;
@@ -60,8 +56,6 @@ public class LeaveRequest implements Serializable{
 	public void setEmp(Employee emp) {
 		this.emp = emp;
 	}
-
-	
 
 	public Date getFromDate() {
 		return fromDate;
@@ -101,14 +95,6 @@ public class LeaveRequest implements Serializable{
 
 	public void setLeaveType(LeaveType leaveType) {
 		this.leaveType = leaveType;
-	}
-
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
 	}
 
 	public String getLeaveReason() {

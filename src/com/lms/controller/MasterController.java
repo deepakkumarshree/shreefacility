@@ -54,7 +54,7 @@ public class MasterController {
 	 	employee.setDob(dob);
 	 	Date joinDate=new SimpleDateFormat("dd-mm-yyyy").parse(request.getParameter("emp.doj"));
 	 	employee.getEmp().setDoj(joinDate);
-		
+	 	employee.getEmp().setPassword(employee.getEmp().getEmpcode());
 		boolean status=employeeService.save(employee,request);
 	 	userBean = (UserBean)request.getSession().getAttribute("user");
 	 	
